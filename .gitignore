@@ -29,3 +29,9 @@ dist-ssr
 *.webm
 *.png
 *.svg
+
+# Allow model assets
+!public/DeskModel/**/*.bin
+!public/DeskModel/**/*.jpg
+!public/DeskModel/**/*.png
+!public/DeskModel/**/*.gltf
