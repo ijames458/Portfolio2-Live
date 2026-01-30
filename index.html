@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>package</title>
+</head>
+
+<body>
+  <canvas id="mainScene"></canvas>
+  <script type="module" src="/src/main.js"></script>
+  <section id="navButtonWrapper">
+    <div class="navButton" id="monNav">
+      <div class="hoverTextWrapper">
+        <p class="monText hoverText" id="projNavText">Projects</p>
+      </div>
+    </div>
+    <div class="navButton" id="lapNav">
+      <div class="hoverTextWrapper">
+        <p class="monText hoverText" id="aboutNavText">About Me</p>
+      </div>
+    </div>
+    <div class="navButton" id="phnNav">
+      <div class="hoverTextWrapper">
+        <p class="monText hoverText" id="contactNavText">Contact</p>
+      </div>
+    </div>
+    <div class="navButton" id="defaultNav">
+      <div class="hoverTextWrapper">
+        <p class="monText hoverText" id="backNavText">V</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contentWrapper" id="monitorDisplay">
+    <div id="desktopMonText">
+      <h1 class="monText">Welcome to my Portfolio!</h1>
+      <h2 class="monText">Check out my stuff by clicking on the icons below</h2>
+    </div>
+    <div id="modalContentWindow">
+      <div class="mTopBar" id="modalWindowTopBar">
+        <p class="monText windowName">MediaMagnifier.exe</p>
+        <div class="mWindowClose" id="modalClose">
+          <p class="monText">X</p>
+        </div>
+      </div>
+      <div id="modalContent">
+        <video autoplay loop muted class="videocontainer" id="modalVideo">
+          Your browser does not support video
+        </video>
+      </div>
+    </div>
+    <div class="monWindows" id="projectDisplay">
+      <div class="mTopBar" id="projectWindowTopBar">
+        <p class="monText windowName">Project.txt</p>
+        <div class="mWindowClose" id="projectClose">
+          <p class="monText">X</p>
+        </div>
+      </div>
+      <div class="projectInfos" id="projHeadlines">
+        <h1 class="monText" id="pName"></h1>
+        <h2 class="monText" id="release"></h2>
+        <ul id="studioPlayBar">
+          <li class="sPBItem" id="studio"></li>
+          <li class="sPBItem" id="playLink" style="background-image: url(/src/Images/SiteNav/playlink.svg)"></li>
+        </ul>
+      </div>
+      <div class="projectInfos" id="projDetails">
+        <div class="pDetailsItem" id="shortDesc">
+          <h2 class="monText">About this project</h2>
+          <p class="monText" id="descText"></p>
+        </div>
+        <div class="pDetailsItem" id="roles-activities">
+          <h2 class="monText">What I did</h2>
+          <p class="monText" id="roleText"></p>
+        </div>
+      </div>
+      <ul id="gallery">
+        <li class="monGalleryElement modal" id="monGallery1"></li>
+        <li class="monGalleryElement modal" id="monGallery2"></li>
+        <li class="monGalleryElement modal" id="monGallery3"></li>
+        <li class="monGalleryElement modal" id="monGallery4"></li>
+        <li class="monGalleryElement modal" id="monGallery5"></li>
+        <li class="monGalleryElement modal" id="monGallery6"></li>
+      </ul>
+    </div>
+    <div class="monWindows" id="smallProjectFinder">
+      <div class="mTopBar" id="sProjWindowTopBar">
+        <p class="monText windowName">Small Project Finder.exe</p>
+        <div class="mWindowClose" id="smallProjectClose">
+          <p class="monText">X</p>
+        </div>
+      </div>
+      <div id="finderContent">
+        <div class="finderElement" id="path">
+          <p class="monText">Quick Access > Recent Projects</p>
+        </div>
+        <div class="finderElement" id="searchFolder">
+          <p class="monText">Search Quick Access</p>
+        </div>
+        <ul class="finderElement" id="folderList">
+          <li class="fListOption">
+            <h2 class="monText">Quick Access</h2>
+          </li>
+          <li class="fListOption">
+            <p class="monText">Desktop</p>
+          </li>
+          <li class="fListOption">
+            <p class="monText">Downloads</p>
+          </li>
+          <li class="fListOption">
+            <p class="monText">Pictures</p>
+          </li>
+          <li class="fListOption">
+            <p class="monText">CVs+CoverLetters</p>
+          </li>
+          <li class="fListOption">
+            <p class="monText">GameRecordings</p>
+          </li>
+          <li class="fListOption">
+            <p class="monText">Portfolio2</p>
+          </li>
+          <li class="fListOption">
+            <p class="monText">TempScreenshots</p>
+          </li>
+        </ul>
+        <ul class="finderElement" id="smallProjectsList">
+          <div id="listTitle">
+            <p class="monText">Recent Projects (6)</p>
+            <hr>
+          </div>
+          <li class="smallProjectContainer" id="MTV">
+            <div class="smallProjectIcon" style="background-image: url(/src/Images/SmallProjects/Mount/mountains.webp)">
+            </div>
+            <div class="sPText">
+              <h2 class="monText">Mountain Valley</h2>
+              <p class="monText">This PC\Small Projects</p>
+            </div>
+          </li>
+          <li class="smallProjectContainer" id="VPW">
+            <div class="smallProjectIcon" style="background-image: url(/src/Images/SmallProjects/VPW/vaporwave.webp)">
+            </div>
+            <div class="sPText">
+              <h2 class="monText">Mountain Valley</h2>
+              <p class="monText">This PC\Small Projects</p>
+            </div>
+          </li>
+          <li class="smallProjectContainer" id="WII">
+            <div class="smallProjectIcon" style="background-image: url(/src/Images/SmallProjects/WiiU/wiiu.webp)"></div>
+            <div class="sPText">
+              <h2 class="monText">Mountain Valley</h2>
+              <p class="monText">This PC\Small Projects</p>
+            </div>
+          </li>
+          <li class="smallProjectContainer" id="TRN">
+            <div class="smallProjectIcon"
+              style="background-image: url(/src/Images/SmallProjects/Train/trainstation.webp)"></div>
+            <div class="sPText">
+              <h2 class="monText">Mountain Valley</h2>
+              <p class="monText">This PC\Small Projects</p>
+            </div>
+          </li>
+          <li class="smallProjectContainer" id="MVC">
+            <div class="smallProjectIcon" style="background-image: url(/src/Images/ProjectThumb/cubethumbnail.webp)">
+            </div>
+            <div class="sPText">
+              <h2 class="monText">Mountain Valley</h2>
+              <p class="monText">This PC\Small Projects</p>
+            </div>
+          </li>
+          <li class="smallProjectContainer" id="DPB">
+            <div class="smallProjectIcon" style="background-image: url(/src/Images/ProjectThumb/boardthumbnail.webp)">
+            </div>
+            <div class="sPText">
+              <h2 class="monText">Departure Board</h2>
+              <p class="monText">This PC\Small Projects</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="monWindows" id="smallProjectProperties">
+      <div class="mTopBar" id="sPPWindowTopBar">
+        <p class="monText windowName">Small Project Properties</p>
+        <div class="mWindowClose" id="smallProjPropClose">
+          <p class="monText">X</p>
+        </div>
+      </div>
+      <div id="sPropertiesContainer">
+        <ul id="sPropertiesContent">
+          <li class="sProperty">
+            <p class="monText" id="sProjName"></p>
+          </li>
+          <li class="sProperty">
+            <p class="monText" id="sProjType"></p>
+          </li>
+          <li class="sProperty">
+            <p class="monText" id="sProjFinish"></p>
+          </li>
+          <li class="sProperty" id="descProperty">
+            <p class="monText" id="sProjDesc"></p>
+          </li>
+          <li class="sProperty" id="sProjGallery">
+            <ul id="spgWrapper">
+              <li class="sGalleryElement modal" id="sGallery1">
+                <video class="videocontainer" id="sGalleryVideo">
+                </video>
+              </li>
+              <li class="sGalleryElement modal" id="sGallery2"></li>
+              <li class="sGalleryElement modal" id="sGallery3"></li>
+              <li class="sGalleryElement modal" id="sGallery4"></li>
+              <li class="sGalleryElement modal" id="sGallery5"></li>
+              <li class="sGalleryElement modal" id="sGallery6"></li>
+              <li class="sGalleryElement modal" id="sGallery7"></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <ul id="projectBar">
+      <li class="pBElementContainer" id="pHome">
+        <div class="pBElementIcon" style="background-image: url(/src/Images/SiteNav/home.svg)"></div>
+      </li>
+      <li class="pBElementContainer" id="searchMock">
+        <p class="monText">Last Updated: 15/01/2026</p>
+      </li>
+      <li class="pBElementContainer project" id="P1">
+        <div class="pBElementIcon" style="background-image: url(/src/Images/ProjectThumb/p1logo.webp)"></div>
+      </li>
+      <li class="pBElementContainer project" id="BSC">
+        <div class="pBElementIcon" style="background-image: url(/src/Images/ProjectThumb/bsc.webp)"></div>
+      </li>
+      <li class="pBElementContainer project" id="SPC">
+        <div class="pBElementIcon" id="SPC" style="background-image: url(/src/Images/ProjectThumb/personal-space.webp)">
+        </div>
+      </li>
+      <li class="pBElementContainer project" id="ANT">
+        <div class="pBElementIcon" style="background-image: url(/src/Images/ProjectThumb/antgame.webp)"></div>
+      </li>
+      <li class="pBElementContainer project" id="BSM">
+        <div class="pBElementIcon" style="background-image: url(/src/Images/ProjectThumb/basementgame.webp)"></div>
+      </li>
+      <li class="pBElementContainer project" id="PLN">
+        <div class="pBElementIcon" style="background-image: url(/src/Images/Projects/PLN/ttrtitle.webp)"></div>
+      </li>
+      <li class="pBElementContainer" id="smallProjBar">
+        <div class="pBElementIcon" style="background-image: url(/src/Images/SiteNav/moreproj.svg)"></div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="contentWrapper" id="laptopDisplay">
+    <div id="desktopLapText">
+      <h1 class="lapText">Curious to know more?</h1>
+      <h2 class="lapText">Find out more about me by clicking the buttons below!</h2>
+    </div>
+    <div id="laptopScreen">
+      <div class="abWindow" id="introduction">
+        <div class="appTopBar">
+          <div class="lWindowClose" id="intClose"></div>
+          <p class="lapText windowName">Notes.dmg</p>
+        </div>
+        <div class="lWindowContent" id="introInfo">
+          <ul id="infoSide">
+            <li class="infoSideElement" id="iseSelect">
+              <h2 class="iSEhead lapText">About-Me!</h2>
+              <p class="iSEpara lapText">Hi, I'm Isaac James! I'm a...</p>
+            </li>
+            <li class="infoSideElement">
+              <h2 class="iSEhead lapText">List-Of-Random-Stuff</h2>
+              <p class="iSEpara lapText">Dimensions of ISS: 109 metr...</p>
+            </li>
+            <li class="infoSideElement">
+              <h2 class="iSEhead lapText">Games Wish List</h2>
+              <p class="iSEpara lapText">Tunic, Risk of Rain: Seekers of...</p>
+            </li>
+            <li class="infoSideElement">
+              <h2 class="iSEhead lapText">SERVER COORDS:</h2>
+              <p class="iSEpara lapText">x:342 y:24 z:2359 skeleton spaw...</p>
+            </li>
+            <li class="infoSideElement" id="iseBottom">
+              <h2 class="iSEhead lapText">GTAVI CHEAT CODES</h2>
+              <p class="iSEpara lapText">DO NOT LEAK: -> <- <...</p>
+            </li>
+          </ul>
+          <div id="infoMain">
+            <h2 class="lapText">Hi, I'm Isaac James!</h2>
+            <p class="lapText">I'm a Junior Games Designer and Developer from Liverpool, UK and am currently
+              designing and developing projects for the Sydney-based L
+              Stands for Winner Studio! </p>
+            <p class="lapText">As a massive nerd, creative genius, or both at times, I've always enjoyed making my
+              own
+              digital creations and sharing them with the rest of the world, and combined with my long-standing
+              interest in video games, I aim to design and develop games that can be enjoyed by everyone around
+              the
+              world.</p>
+            <p class="lapText">When I'm not at my computer making stuff, you can pretty much count on me watching
+              Football, watching F1, playing Guitar or playing something made by Nintendo!</p>
+            <p class="lapText">Thanks for visiting my Portfolio!</p>
+          </div>
+        </div>
+      </div>
+      <div class="abWindow" id="skills-experience">
+        <div class="appTopBar">
+          <div class="lWindowClose" id="seClose"></div>
+          <p class="lapText windowName">SkillsandExperienceMonitor.dmg</p>
+        </div>
+        <div class="lWindowContent" id="seInfo">
+          <ul class="seCol" id="sName">
+            <li class="colElement colHead">
+              <h2 class="lapText">Skill</h2>
+            </li>
+            <li class="colElement categoryDivide">
+              <p class="lapText">Languages</p>
+            </li>
+            <li class="colElement colMain skillText">
+              <p class="lapText">C#</p>
+            </li>
+            <li class="colElement categoryDivide">
+              <p class="lapText">Software</p>
+            </li>
+            <li class="colElement colMain skillText">
+              <p class="lapText">Unity</p>
+            </li>
+            <li class="colElement colAltMain skillText">
+              <p class="lapText">Blender</p>
+            </li>
+          </ul>
+          <ul class="seCol" id="sProf">
+            <li class="colElement colHead">
+              <h2 class="lapText">Proficiency</h2>
+            </li>
+            <li class="colElement categoryDivide"></li>
+            <li class="colElement colMain profText">
+              <p class="lapText">Graduate</p>
+            </li>
+            <li class="colElement categoryDivide"></li>
+            <li class="colElement colMain profText">
+              <p class="lapText">Graduate</p>
+            </li>
+            <li class="colElement colAltMain profText">
+              <p class="lapText">Beginner</p>
+            </li>
+          </ul>
+          <ul class="seCol" id="sExp">
+            <li class="colElement colHead">
+              <h2 class="lapText">Experience</h2>
+            </li>
+            <li class="colElement categoryDivide"></li>
+            <li class="colElement colMain expText">
+              <p class="lapText">4 years of experience at a graduate level via the usage of Unity, using the language to
+                construct those projects and commissions.</p>
+            </li>
+            <li class="colElement categoryDivide"></li>
+            <li class="colElement colMain expText">
+              <p class="lapText">4 years of experience at a graduate level, creating major university projects, company
+                commissions and various game-jams. </p>
+            </li>
+            <li class="colElement colAltMain expText">
+              <p class="lapText">3 years of on-and-off experience at a basic/low-intermediate level, creating both
+                low-poly and moderately-detailed 3D models for afformentioned game-jams, personal projects and general
+                past-time.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="abWindow" id="funFacts">
+        <div class="appTopBar">
+          <div class="lWindowClose" id="ffClose"></div>
+          <p class="lapText windowName">FunFacts.png</p>
+        </div>
+        <div class="lWindowContent" id="fFInfo">
+          <div id="fFGalleryWrapper">
+            <div class="fFButton" id="fFBack">
+              <div class="fFTextWrapper">
+                <p class="lapText">
+                  < </p>
+              </div>
+            </div>
+            <div class="fFButton" id="fFForward">
+              <div class="fFTextWrapper">
+                <p class="lapText">></p>
+              </div>
+            </div>
+            <div id="fFGallery">
+              <p class="fFText lapText"></p>
+              <p class="fFText lapText"></p>
+            </div>
+          </div>
+          <ul class="progressIndicatorBar">
+            <li class="progressIndicator"></li>
+            <li class="progressIndicator"></li>
+            <li class="progressIndicator"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ul id="aboutMeBar">
+      <li class="abBarElement" id="introBar" style="background-image: url(/src/Images/SiteNav/about.svg)">
+        <div class="abName">
+          <p class="abNameText lapText">About Me</p>
+        </div>
+      </li>
+      <li class="abBarElement" id="sk-exBar" style="background-image: url(/src/Images/SiteNav/skillexp.svg)">
+        <div class="abName">
+          <p class="abNameText lapText">Skills/Experience</p>
+        </div>
+      </li>
+      <li class="abBarElement" id="fFBar" style="background-image: url(/src/Images/SiteNav/funfacts.svg)">
+        <div class="abName">
+          <p class="abNameText lapText">Fun Facts</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="contentWrapper" id="phoneDisplay">
+    <div id="phoneScreenText">
+      <h1 class="lapText">Have Questions?</h1>
+      <h2 class="lapText">Contact Me!</h2>
+    </div>
+    <ul id="phoneApps">
+      <li class="contactApp" id="LI" style="background-image: url(/src/Images/SiteNav/linkedin.webp)"></li>
+      <li class="contactApp" id="GT" style="background-image: url(/src/Images/SiteNav/github.webp)"></li>
+      <li class="contactApp" id="EM" style="background-image: url(/src/Images/SiteNav/mail.webp)"></li>
+      <li class="contactApp" id="BS" style="background-image: url(/src/Images/SiteNav/bluesky.webp)"></li>
+    </ul>
+  </section>
+</body>
+
+</html>
