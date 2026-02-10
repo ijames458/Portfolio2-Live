@@ -1,9 +1,12 @@
 import { GLTFLoader, OrbitControls, RectAreaLightHelper } from 'three/examples/jsm/Addons.js';
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+import { TTFLoader } from 'three/addons/loaders/TTFLoader.js';
 import './style.css'
 import * as THREE from 'three'
 import { Tween, Group } from '@tweenjs/tween.js'
-import { ToTarget, currentlyAnim } from './cameranimations';
-import { projectOBJs, smallProjectOBJs, projectLinkOBJs, aboutWindowsOBJs, funFacts, contactLinkOBJs, navButtonOBJs, windowRatios } from './objectarrays';
+import { ToTarget, currentlyAnim, TextGrow } from './tweenanimations';
+import { projectOBJs, smallProjectOBJs, projectLinkOBJs, propertySelectors, aboutWindowsOBJs, funFacts, contactLinkOBJs, windowRatios, navButtonOBJs } from './objectarrays';
 
 //#region ThreeJS Setup
 const scene = new THREE.Scene();
@@ -34,7 +37,7 @@ export const laptopView = new THREE.Vector3(-0.03, 4.6, 1.7);
 export const laptopRotation = new THREE.Vector3(0, 35.01 * (Math.PI / 180), 0.08 * (Math.PI / 180));
 
 export const phoneView = new THREE.Vector3(3.3, 7.5, 0.23);
-export const phoneRotation = new THREE.Vector3(-79.8 * (Math.PI / 180), 0, -16.5 * (Math.PI / 180))
+export const phoneRotation = new THREE.Vector3(-79.8 * (Math.PI / 180), 0, -16.6 * (Math.PI / 180))
 
 //debug starting position changes
 camera.position.set(startingPos.x, startingPos.y, startingPos.z);
@@ -61,7 +64,7 @@ camera.rotation.set(startingRot.x, startingRot.y, startingRot.z);
 // controls.target = new THREE.Vector3(0, 6, 0)
 // controls.update();
 
-
+//Load Model into scene
 const loader = new GLTFLoader().setPath('DeskModel/')
 console.log('loader initialised');
 loader.load('portfolio2.gltf', (gltf) => { //Callback function (active when other one finishes)
@@ -102,7 +105,7 @@ sideLight.target.position.set(0, 0, 0);
 sideLight.castShadow = true;
 sideLight.shadow.mapSize.width = 2048;
 sideLight.shadow.mapSize.height = 2048;
-sideLight.shadow.bias = -0.0001;
+sideLight.shadow.bias = -0.0004;
 scene.add(sideLight);
 
 // const sLightHelper = new THREE.SpotLightHelper(sideLight, 0xffffff);
@@ -116,7 +119,7 @@ frontLight.target.position.set(0, 0, 0);
 frontLight.castShadow = true;
 frontLight.shadow.mapSize.width = 2048;
 frontLight.shadow.mapSize.height = 2048;
-frontLight.shadow.bias = -0.0009;
+frontLight.shadow.bias = -0.0004;
 scene.add(frontLight);
 
 // const fLightHelper = new THREE.SpotLightHelper(frontLight, 0xffffff);
@@ -153,23 +156,153 @@ scene.add(phoneLight);
 const phoneHelper = new RectAreaLightHelper(phoneLight, 0xffffff);
 phoneLight.add(phoneHelper);
 
-//camera animations
-const camAnimations = new Group();
+
+//Navigation button setup
+//Loading fonts for text
+const textLoader = new FontLoader();
+const font = await textLoader.loadAsync('/Portfolio2-Remake/public/fonts/droid_sans_regular.typeface.json');
+
+//Monitor Button
+const projectText = new THREE.Mesh(
+  new TextGeometry('Projects', {
+    size: 0.17,
+    font: font,
+    depth: 0
+  }),
+  new THREE.MeshBasicMaterial({ color: 0xababab })
+);
+scene.add(projectText);
+
+const monitorButton = new THREE.Mesh(
+  new THREE.BoxGeometry(2.55, 1.4, 0),
+  new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.FrontSide, wireframe: true, transparent: true, opacity: 0 })
+);
+monitorButton.name = "monNav";
+monitorButton.attach(projectText);
+
+// Default Text Position
+projectText.position.set(-0.42, -0.05, 0);
+
+monitorButton.position.set(navButtonOBJs[0].DefaultPos.x, navButtonOBJs[0].DefaultPos.y, navButtonOBJs[0].DefaultPos.z,);
+monitorButton.rotation.set(0, 0, 0);
+monitorButton.scale.set(1, 1, 1);
+scene.add(monitorButton);
+
+
+//Laptop Button
+const aboutText = new THREE.Mesh(
+  new TextGeometry('About Me', {
+    size: 0.17,
+    font: font,
+    depth: 0
+  }),
+  new THREE.MeshBasicMaterial({ color: 0xababab })
+);
+scene.add(aboutText);
+
+const laptopButton = new THREE.Mesh(
+  new THREE.BoxGeometry(1.1, 0.7, 0),
+  new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.FrontSide, wireframe: true, transparent: true, opacity: 0 })
+);
+
+laptopButton.name = "lapNav";
+laptopButton.attach(aboutText);
+
+aboutText.position.set(-0.49, -0.07, 0);
+
+laptopButton.position.set(navButtonOBJs[1].DefaultPos.x, navButtonOBJs[1].DefaultPos.y, navButtonOBJs[1].DefaultPos.z,);
+laptopButton.rotation.set(0, 0, 0);
+laptopButton.scale.set(1, 1, 1);
+scene.add(laptopButton);
+
+
+//Phone Button
+const contactText = new THREE.Mesh(
+  new TextGeometry('Contact', {
+    size: 0.17,
+    font: font,
+    depth: 0
+  }),
+  new THREE.MeshBasicMaterial({ color: 0xababab })
+);
+scene.add(contactText);
+
+const phoneButton = new THREE.Mesh(
+  new THREE.BoxGeometry(0.8, 0.5, 0),
+  new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.BackSide, wireframe: true, transparent: true, opacity: 0 })
+);
+phoneButton.name = "phnNav";
+phoneButton.attach(contactText);
+contactText.position.set(-0.41, -0.075, 0);
+
+phoneButton.position.set(navButtonOBJs[2].DefaultPos.x, navButtonOBJs[2].DefaultPos.y, navButtonOBJs[2].DefaultPos.z,);
+phoneButton.rotation.set(0, 0, 0);
+phoneButton.scale.set(1, 1, 1);
+scene.add(phoneButton);
+
+export const navButtonArray = new Array(monitorButton, laptopButton, phoneButton);
+
+// var isHovering = false;
+var prevButton;
+window.addEventListener('mousemove', (event) => {
+  var raycast = GenerateRayCast(event);
+  var buttonHover = raycast.intersectObjects(navButtonArray, false);
+  if (buttonHover.length > 0) {
+    document.body.style.cursor = "pointer";
+    var curButton = buttonHover[0];
+    curButton.object.children[0].material.color.setHex(0x3c6080);
+
+    prevButton = curButton;
+
+    // var scaleTarget = new THREE.Vector3(buttonHover[0].object.children[0].scale.x + 0.2, buttonHover[0].object.children[0].scale.y + 0.2, 0);
+    // var posTarget = new THREE.Vector3(buttonHover[0].object.children[0].position.x - 0.12, buttonHover[0].object.children[0].position.y, buttonHover[0].object.children[0].position.z);
+    // if (!isHovering) {
+    //   isHovering = true;
+    //   TextGrow(buttonHover[0].object.children[0], posTarget, scaleTarget, 200, animationsGroup);
+    // }
+  } else {
+    document.body.style.cursor = "default";
+    if (prevButton) {
+      prevButton.object.children[0].material.color.setHex(0xababab);
+    }
+    // isHovering = false;
+  }
+})
+
+
+window.addEventListener('click', (event) => {
+  var raycast = GenerateRayCast(event);
+  var buttonIntersection = raycast.intersectObjects(navButtonArray, false);
+  if (buttonIntersection.length > 0) {
+    NavButtonClick(buttonIntersection[0]);
+  }
+})
+
+function GenerateRayCast(event) {
+  var mouseRayCast = new THREE.Raycaster();
+  var coordinates = new THREE.Vector2(
+    (event.clientX / window.innerWidth) * 2 - 1,
+    - (event.clientY / window.innerHeight) * 2 + 1
+  );
+  mouseRayCast.setFromCamera(coordinates, camera);
+  return mouseRayCast;
+}
+
+//animations
+const animationsGroup = new Group();
+
 //#endregion
 
 
 
 //#region Website Functionality
-
 //Array of each window wrapper to be resized when resizing the actual website (hopefully everything else just falls into place)
 export var contentWindows = document.getElementsByClassName("contentWrapper");
 
 //Adding click events to all buttons
-//Buttons to move around the website
-export var navButtons = document.getElementsByClassName("navButton");
-for (var i = 0; i < navButtons.length; i++) {
-  navButtons[i].addEventListener('click', NavButtonClick);
-}
+//Button to go back to the default view
+export var backButton = document.getElementById("backNav");
+backButton.addEventListener('click', ResetNavButtons);
 
 //Button to remove all content from monitor
 var monitorHome = document.getElementById("pHome");
@@ -203,13 +336,18 @@ for (var i = 0; i < smallProjectButtons.length; i++) {
   smallProjectButtons[i].addEventListener('click', OpenSmallProject);
 }
 
+var sProjectPropertySelectors = document.getElementsByClassName("sPropertyOption");
+for (var i = 0; i < sProjectPropertySelectors.length; i++) {
+  sProjectPropertySelectors[i].addEventListener('click', SwitchProperties);
+}
+
 //Mouse listeners to allow for horizontal drag scrolling of small project gallery
-var scrollParent = document.getElementById("sProjGallery");
-var scrollGallery = document.getElementById("spgWrapper");
-scrollParent.addEventListener("mousemove", RunDrag);
-scrollParent.addEventListener("mousedown", DragStart);
-scrollParent.addEventListener("mouseup", DragStop);
-scrollParent.addEventListener("mouseleave", DragStop);
+// var scrollParent = document.getElementById("sProjGallery");
+// var scrollGallery = document.getElementById("spgWrapper");
+// scrollParent.addEventListener("mousemove", RunDrag);
+// scrollParent.addEventListener("mousedown", DragStart);
+// scrollParent.addEventListener("mouseup", DragStop);
+// scrollParent.addEventListener("mouseleave", DragStop);
 
 //buttons to close monitor windows 
 var monWinCloseButtons = document.getElementsByClassName("mWindowClose");
@@ -258,7 +396,7 @@ function OpenProject() {
   var projDetails = document.getElementById("projDetails");
   var projAbout = document.getElementById("descText");
   var projRole = document.getElementById("roleText");
-  var projGallery = document.getElementById("gallery");
+  var projGallery = document.getElementById("projGallery");
 
   for (i = 0; i < projectBarButtons.length; i++) {
     if (this.id == projectOBJs[i].id) {
@@ -354,10 +492,6 @@ function OpenSmallProject() {
 var curModalImage = document.getElementById("modalContent");
 var modalVideoDisplay = document.getElementById("modalVideo");
 function OpenModalMedia() {
-  console.log(curScrollValue);
-  if (curScrollValue != 0) {
-    return
-  }
   if (!this.firstElementChild || this.firstElementChild.getAttribute("src") == "") {
     modalVideoDisplay.setAttribute("src", "");
     curModalImage.style.backgroundImage = this.style.backgroundImage;
@@ -410,42 +544,56 @@ function HideMonContent() {
     smallProjFinder.style.visibility = "hidden";
   } else {
     for (i = 0; i < monWinCloseButtons.length; i++) {
-      var curWindow = document.getElementById(this.id).parentElement.parentElement;
+      var curWindow = this.parentElement.parentElement;
       curWindow.style.visibility = "hidden";
     }
   }
 }
 
-
-var mouseClicked = false;
-var mouseStartPos = 0;
-var scrollProgress = 0;
-var curScrollValue = 0;
-function DragStart(event) {
-  console.log("mousepressed");
-  scrollGallery.style.cursor = "grabbing";
-  mouseClicked = true;
-  mouseStartPos = event.pageX - scrollParent.offsetLeft;
-  scrollProgress = scrollParent.scrollLeft;
-  curScrollValue = 0;
-}
-
-function DragStop() {
-  mouseClicked = false;
-  scrollGallery.style.cursor = "pointer";
-}
-
-
-function RunDrag(event) {
-  if (!mouseClicked) {
-    return;
+var sPropertyInfos = document.getElementById("sPropertiesInfos");
+var curScrollMultiplier;
+function SwitchProperties() {
+  for (i = 0; i < sProjectPropertySelectors.length; i++) {
+    if (this.id == propertySelectors[i].id) {
+      this.classList.add("curPropertySection");
+      sPropertyInfos.scrollLeft += (sPropertyInfos.offsetWidth * propertySelectors[i].scrollValue);
+      curScrollMultiplier = propertySelectors[i].scrollValue;
+    } else {
+      document.getElementById(propertySelectors[i].id).classList.remove("curPropertySection");
+    }
   }
-  event.preventDefault();
-  var curX = event.pageX - scrollParent.offsetLeft;
-  curScrollValue = (curX - mouseStartPos) * 2; //Adjusting the scroll speed
-  scrollParent.scrollLeft = scrollProgress - curScrollValue
-  console.log(curScrollValue);
 }
+
+
+// var mouseClicked = false;
+// var mouseStartPos = 0;
+// var scrollProgress = 0;
+// var curScrollValue = 0;
+// function DragStart(event) {
+//   console.log("mousepressed");
+//   scrollGallery.style.cursor = "grabbing";
+//   mouseClicked = true;
+//   mouseStartPos = event.pageX - scrollParent.offsetLeft;
+//   scrollProgress = scrollParent.scrollLeft;
+//   curScrollValue = 0;
+// }
+
+// function DragStop() {
+//   mouseClicked = false;
+//   scrollGallery.style.cursor = "pointer";
+// }
+
+
+// function RunDrag(event) {
+//   if (!mouseClicked) {
+//     return;
+//   }
+//   event.preventDefault();
+//   var curX = event.pageX - scrollParent.offsetLeft;
+//   curScrollValue = (curX - mouseStartPos) * 2; //Adjusting the scroll speed
+//   scrollParent.scrollLeft = scrollProgress - curScrollValue
+//   console.log(curScrollValue);
+// }
 
 
 var galleryText = document.getElementsByClassName("fFText");
@@ -478,51 +626,63 @@ var monitorHTML = document.getElementById("monitorDisplay");
 var laptopHTML = document.getElementById("laptopDisplay");
 var phoneHTML = document.getElementById("phoneDisplay");
 
-function NavButtonClick() {
-  var visibleButtons = new Array();
-  var clickedButton = null;
-
-  for (i = 0; i < navButtons.length; i++) {
-    navButtons[i].style.visibility = "hidden";
-    if (this.id == navButtonOBJs[i].id) {
-      clickedButton = navButtonOBJs[i];
-    } else {
-      visibleButtons.push(navButtons[i]);
-      ChangeButtonVis(this.id, navButtons[i], navButtonOBJs[i]);
-    }
-  }
-
+function NavButtonClick(curButton) {
+  var activeButtons = new Array();
+  var curButtonOBJ;
   if (!currentlyAnim) {
-    if (this.id == "defaultNav") {
-      ResetNavButtons(visibleButtons, navButtonOBJs);
+    for (i = 0; i < navButtonArray.length; i++) {
+      if (curButton.object.name != navButtonOBJs[i].id) {
+        activeButtons.push(navButtonArray[i]);
+      } else {
+        curButtonOBJ = navButtonOBJs[i];
+        curButton.object.layers.set(10);
+        curButton.object.children[0].layers.set(10);
+      }
     }
-    clickedButton.MoveTo(camera, camAnimations, 500, monitorHTML, laptopHTML, phoneHTML, visibleButtons);
+    backButton.style.visibility = "visible";
+    ChangeActiveButtons(curButton.object.name, activeButtons);
+    curButtonOBJ.MoveTo(camera, animationsGroup, 500, monitorHTML, laptopHTML, phoneHTML, activeButtons);
   }
 }
-//TODO: Make more efficient (Doesn't need to be called every time as only one of the 4 buttons actually move between locations)
-function ChangeButtonVis(activeButton, curButtonHTML, curButtonObj) {
-  curButtonHTML.style.top = curButtonObj.ActiveTPos;
-  curButtonHTML.style.width = curButtonObj.ActiveWidth;
-  curButtonHTML.style.height = curButtonObj.ActiveHeight;
-  curButtonHTML.firstElementChild.firstElementChild.innerText = curButtonObj.ActiveText;
-  curButtonHTML.firstElementChild.firstElementChild.style.display = "block";
+//TODO: Make more efficient (This would get me fired from anywhere but at least it works)
+function ChangeActiveButtons(clickedButton, activeButtonArray) {
+  console.log(clickedButton.substring(0, 3));
 
-  if (activeButton == "lapNav" && curButtonObj.id == "monNav") {
-    curButtonHTML.style.left = curButtonObj.ActiveLPosAlt;
-    curButtonHTML.firstElementChild.firstElementChild.innerText = curButtonObj.ActiveTextAlt;
-  } else {
-    curButtonHTML.style.left = curButtonObj.ActiveLPos;
+  for (i = 0; i < activeButtonArray.length; i++) {
+    var activeButtonPrefix = activeButtonArray[i].name.substring(0, 3);
+    for (var k = 0; k < navButtonOBJs.length; k++) {
+      if (activeButtonPrefix == navButtonOBJs[k].id.substring(0, 3)) {
+        if (clickedButton.substring(0, 3) == "mon") {
+          activeButtonArray[i].position.set(monitorView.x + navButtonOBJs[k].monPos.x, monitorView.y + navButtonOBJs[k].monPos.y, monitorView.z + navButtonOBJs[k].monPos.z,);
+          activeButtonArray[i].rotation.set(startingRot.x + navButtonOBJs[k].monRot.x, startingRot.y + navButtonOBJs[k].monRot.y, startingRot.z + navButtonOBJs[k].monRot.z,);
+
+        } else if (clickedButton.substring(0, 3) == "lap") {
+          activeButtonArray[i].position.set(laptopView.x + navButtonOBJs[k].lapPos.x, laptopView.y + navButtonOBJs[k].lapPos.y, laptopView.z + navButtonOBJs[k].lapPos.z,);
+          activeButtonArray[i].rotation.set(laptopRotation.x + navButtonOBJs[k].lapRot.x, laptopRotation.y + navButtonOBJs[k].lapRot.y, laptopRotation.z + navButtonOBJs[k].lapRot.z,);
+        } else {
+          activeButtonArray[i].position.set(phoneView.x + navButtonOBJs[k].phnPos.x, phoneView.y + navButtonOBJs[k].phnPos.y, phoneView.z + navButtonOBJs[k].phnPos.z,);
+          activeButtonArray[i].rotation.set(phoneRotation.x + navButtonOBJs[k].phnRot.x, phoneRotation.y + navButtonOBJs[k].phnRot.y, phoneRotation.z + navButtonOBJs[k].phnRot.z,);
+        }
+        activeButtonArray[i].scale.set(navButtonOBJs[k].activeScl.x, navButtonOBJs[k].activeScl.y, navButtonOBJs[k].activeScl.z);
+        activeButtonArray[i].children[0].position.setX(navButtonOBJs[k].activeTextPos);
+        activeButtonArray[i].children[0].scale.set(navButtonOBJs[k].activeTextScl.x, navButtonOBJs[k].activeTextScl.y, navButtonOBJs[k].activeTextScl.z);
+      }
+    }
   }
 }
 
-function ResetNavButtons(buttonsHTML, buttonOBJs) {
-  for (i = 0; i < buttonsHTML.length; i++) {
-    buttonsHTML[i].style.top = buttonOBJs[i].DefaultTPos;
-    buttonsHTML[i].style.left = buttonOBJs[i].DefaultLPos;
-    buttonsHTML[i].style.width = buttonOBJs[i].DefaultWidth;
-    buttonsHTML[i].style.height = buttonOBJs[i].DefaultHeight;
-    buttonsHTML[i].firstElementChild.firstElementChild.innerText = buttonOBJs[i].DefaultText;
-    buttonsHTML[i].firstElementChild.firstElementChild.style.display = "";
+function ResetNavButtons() {
+  if (!currentlyAnim) {
+    this.style.visibility = "hidden";
+    for (i = 0; i < navButtonArray.length; i++) {
+      navButtonArray[i].position.set(navButtonOBJs[i].DefaultPos.x, navButtonOBJs[i].DefaultPos.y, navButtonOBJs[i].DefaultPos.z);
+      navButtonArray[i].rotation.set(startingRot.x, startingRot.y, startingRot.z);
+      navButtonArray[i].scale.set(1, 1, 1);
+
+      navButtonArray[i].children[0].position.setX(navButtonOBJs[i].DefTextXPos);
+      navButtonArray[i].children[0].scale.set(1, 1, 1);
+    }
+    navButtonOBJs[3].MoveTo(camera, animationsGroup, 500, monitorHTML, laptopHTML, phoneHTML, navButtonArray);
   }
 }
 
@@ -536,16 +696,16 @@ function OnKeyDown(event) {
   if (!currentlyAnim) {
     if (keyCode == 38) //uarr
     {
-      ToTarget(monitorView, startingRot, camera, camAnimations, 500, monitorHTML);
+      ToTarget(monitorView, startingRot, camera, animationsGroup, 500, monitorHTML);
     } else if (keyCode == 40) //darr
     {
-      ToTarget(startingPos, startingRot, camera, camAnimations, 500, monitorHTML);
+      ToTarget(startingPos, startingRot, camera, animationsGroup, 500, monitorHTML);
     } else if (keyCode == 37) //larr
     {
-      ToTarget(laptopView, laptopRotation, camera, camAnimations, 500, laptopHTML);
+      ToTarget(laptopView, laptopRotation, camera, animationsGroup, 500, laptopHTML);
     } else if (keyCode == 39) //rarr
     {
-      ToTarget(phoneView, phoneRotation, camera, camAnimations, 500, phoneHTML);
+      ToTarget(phoneView, phoneRotation, camera, animationsGroup, 500, phoneHTML);
     } else {
       return;
     }
@@ -564,19 +724,6 @@ var startingHeight = window.innerHeight;
 var stWidthChange = defaultWidth - startingWidth;
 var stHeightChange = defaultHeight - startingHeight;
 
-
-for (i = 0; i < navButtons.length; i++) {
-  var curButtonWidth = navButtons[i].clientWidth;
-  var curButtonPos = navButtons[i].getBoundingClientRect().left;
-
-  curButtonPos -= navButtonOBJs[i].WbPRatio * stWidthChange;
-  curButtonPos += navButtonOBJs[i].HbPRatio * stHeightChange;
-  curButtonWidth -= navButtonOBJs[i].HbWRatio * stHeightChange;
-
-  navButtons[i].style.width = curButtonWidth + "px";
-  navButtons[i].style.left = curButtonPos + "px";
-}
-
 for (i = 0; i < contentWindows.length; i++) {
   var curWindowWidth = contentWindows[i].clientWidth;
   var curWindowPos = contentWindows[i].getBoundingClientRect().left;
@@ -587,7 +734,7 @@ for (i = 0; i < contentWindows.length; i++) {
 
   contentWindows[i].style.width = curWindowWidth + "px";
   contentWindows[i].style.left = curWindowPos + "px";
-  console.log(curWindowPos);
+  // console.log(curWindowPos);
 }
 
 
@@ -598,17 +745,18 @@ function onWindowResize() {
   var widthChange = prevWidth - window.innerWidth;
   var heightChange = prevHeight - window.innerHeight;
 
-  // for (i = 0; i < navButtons.length; i++) {
-  //   var curButtonWidth = navButtons[i].clientWidth;
-  //   var curButtonPos = navButtons[i].getBoundingClientRect().left;
+  for (i = 0; i < contentWindows.length; i++) {
+    var curWindowWidth = contentWindows[i].clientWidth;
+    var curWindowPos = contentWindows[i].getBoundingClientRect().left;
 
-  //   curButtonPos -= navButtonOBJs[i].WbPRatio * widthChange;
-  //   curButtonPos += navButtonOBJs[i].HbPRatio * heightChange;
-  //   curButtonWidth -= navButtonOBJs[i].HbWRatio * heightChange;
+    curWindowPos -= windowRatios[i].WbPRatio * widthChange;
+    curWindowPos += windowRatios[i].HbPRatio * heightChange;
+    curWindowWidth -= windowRatios[i].HbWRatio * heightChange;
 
-  //   navButtons[i].style.width = curButtonWidth + "px";
-  //   navButtons[i].style.left = curButtonPos + "px";
-  // }
+    contentWindows[i].style.width = curWindowWidth + "px";
+    contentWindows[i].style.left = curWindowPos + "px";
+    sPropertyInfos.scrollLeft = sPropertyInfos.offsetWidth * curScrollMultiplier;
+  }
 
   // console.log(curButtonHeight);
   camera.aspect = window.innerWidth / window.innerHeight;
@@ -617,15 +765,14 @@ function onWindowResize() {
 
   prevWidth = window.innerWidth;
   prevHeight = window.innerHeight;
-  console.log(window.innerWidth, window.innerHeight);
+  // console.log(window.innerWidth, window.innerHeight);
 }
 
 function animate() {
   requestAnimationFrame(animate);
   // controls.update();
-  camAnimations.update();
+  animationsGroup.update();
   renderer.render(scene, camera);
   // console.log(mouseClicked);
 }
-
 animate();

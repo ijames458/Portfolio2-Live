@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="./src/style.css">
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>package</title>
@@ -11,26 +10,11 @@
 
 <body>
   <canvas id="mainScene"></canvas>
-  <script type="module" src="./src/main.js"></script>
+  <script type="module" src="/src/main.js"></script>
   <section id="navButtonWrapper">
-    <div class="navButton" id="monNav">
+    <div class="navButton" id="backNav">
       <div class="hoverTextWrapper">
-        <p class="monText hoverText" id="projNavText">Projects</p>
-      </div>
-    </div>
-    <div class="navButton" id="lapNav">
-      <div class="hoverTextWrapper">
-        <p class="monText hoverText" id="aboutNavText">About Me</p>
-      </div>
-    </div>
-    <div class="navButton" id="phnNav">
-      <div class="hoverTextWrapper">
-        <p class="monText hoverText" id="contactNavText">Contact</p>
-      </div>
-    </div>
-    <div class="navButton" id="defaultNav">
-      <div class="hoverTextWrapper">
-        <p class="monText hoverText" id="backNavText">V</p>
+        <p class="monText hoverText" id="backNavText">Back</p>
       </div>
     </div>
   </section>
@@ -78,7 +62,7 @@
           <p class="monText" id="roleText"></p>
         </div>
       </div>
-      <ul id="gallery">
+      <ul id="projGallery">
         <li class="monGalleryElement modal" id="monGallery1"></li>
         <li class="monGalleryElement modal" id="monGallery2"></li>
         <li class="monGalleryElement modal" id="monGallery3"></li>
@@ -115,16 +99,13 @@
             <p class="monText">Pictures</p>
           </li>
           <li class="fListOption">
-            <p class="monText">CVs+CoverLetters</p>
+            <p class="monText">CVs</p>
           </li>
           <li class="fListOption">
-            <p class="monText">GameRecordings</p>
+            <p class="monText">Games</p>
           </li>
           <li class="fListOption">
             <p class="monText">Portfolio2</p>
-          </li>
-          <li class="fListOption">
-            <p class="monText">TempScreenshots</p>
           </li>
         </ul>
         <ul class="finderElement" id="smallProjectsList">
@@ -144,14 +125,14 @@
             <div class="smallProjectIcon" style="background-image: url(/src/Images/SmallProjects/VPW/vaporwave.webp)">
             </div>
             <div class="sPText">
-              <h2 class="monText">Mountain Valley</h2>
+              <h2 class="monText">VaporWave</h2>
               <p class="monText">This PC\Small Projects</p>
             </div>
           </li>
           <li class="smallProjectContainer" id="WII">
             <div class="smallProjectIcon" style="background-image: url(/src/Images/SmallProjects/WiiU/wiiu.webp)"></div>
             <div class="sPText">
-              <h2 class="monText">Mountain Valley</h2>
+              <h2 class="monText">Wii U</h2>
               <p class="monText">This PC\Small Projects</p>
             </div>
           </li>
@@ -159,7 +140,7 @@
             <div class="smallProjectIcon"
               style="background-image: url(/src/Images/SmallProjects/Train/trainstation.webp)"></div>
             <div class="sPText">
-              <h2 class="monText">Mountain Valley</h2>
+              <h2 class="monText">Train Station</h2>
               <p class="monText">This PC\Small Projects</p>
             </div>
           </li>
@@ -167,7 +148,7 @@
             <div class="smallProjectIcon" style="background-image: url(/src/Images/ProjectThumb/cubethumbnail.webp)">
             </div>
             <div class="sPText">
-              <h2 class="monText">Mountain Valley</h2>
+              <h2 class="monText">Moving Cube</h2>
               <p class="monText">This PC\Small Projects</p>
             </div>
           </li>
@@ -191,20 +172,30 @@
       </div>
       <div id="sPropertiesContainer">
         <ul id="sPropertiesContent">
-          <li class="sProperty">
-            <p class="monText" id="sProjName"></p>
-          </li>
-          <li class="sProperty">
-            <p class="monText" id="sProjType"></p>
-          </li>
-          <li class="sProperty">
-            <p class="monText" id="sProjFinish"></p>
-          </li>
-          <li class="sProperty" id="descProperty">
-            <p class="monText" id="sProjDesc"></p>
-          </li>
-          <li class="sProperty" id="sProjGallery">
-            <ul id="spgWrapper">
+          <ul id="sPropertySelector">
+            <li class="sPropertyOption curPropertySection" id="aboutButton">
+              <p class="monText">About</p>
+            </li>
+            <li class="sPropertyOption" id="galleryButton">
+              <p class="monText">Gallery</p>
+            </li>
+          </ul>
+          <ul id="sPropertiesInfos">
+            <ul class="infosSection" id="aboutSection">
+              <li class="sProperty">
+                <p class="monText" id="sProjName"></p>
+              </li>
+              <li class="sProperty">
+                <p class="monText" id="sProjType"></p>
+              </li>
+              <li class="sProperty">
+                <p class="monText" id="sProjFinish"></p>
+              </li>
+              <li class="sProperty" id="descProperty">
+                <p class="monText" id="sProjDesc"></p>
+              </li>
+            </ul>
+            <ul class="infosSection" id="gallerySection">
               <li class="sGalleryElement modal" id="sGallery1">
                 <video class="videocontainer" id="sGalleryVideo">
                 </video>
@@ -215,9 +206,9 @@
               <li class="sGalleryElement modal" id="sGallery5"></li>
               <li class="sGalleryElement modal" id="sGallery6"></li>
               <li class="sGalleryElement modal" id="sGallery7"></li>
+              </li>
             </ul>
-          </li>
-        </ul>
+          </ul>
       </div>
     </div>
     <ul id="projectBar">
@@ -225,7 +216,7 @@
         <div class="pBElementIcon" style="background-image: url(/src/Images/SiteNav/home.svg)"></div>
       </li>
       <li class="pBElementContainer" id="searchMock">
-        <p class="monText">Last Updated: 15/01/2026</p>
+        <p class="monText">Last Updated: 10/02/2026</p>
       </li>
       <li class="pBElementContainer project" id="P1">
         <div class="pBElementIcon" style="background-image: url(/src/Images/ProjectThumb/p1logo.webp)"></div>
@@ -270,19 +261,19 @@
               <p class="iSEpara lapText">Hi, I'm Isaac James! I'm a...</p>
             </li>
             <li class="infoSideElement">
-              <h2 class="iSEhead lapText">List-Of-Random-Stuff</h2>
+              <h2 class="iSEhead lapText">Random-Stuff</h2>
               <p class="iSEpara lapText">Dimensions of ISS: 109 metr...</p>
             </li>
             <li class="infoSideElement">
               <h2 class="iSEhead lapText">Games Wish List</h2>
-              <p class="iSEpara lapText">Tunic, Risk of Rain: Seekers of...</p>
+              <p class="iSEpara lapText">Tunic, Arc Raid...</p>
             </li>
             <li class="infoSideElement">
               <h2 class="iSEhead lapText">SERVER COORDS:</h2>
-              <p class="iSEpara lapText">x:342 y:24 z:2359 skeleton spaw...</p>
+              <p class="iSEpara lapText">x:342 y:24 z:2359 main bas...</p>
             </li>
             <li class="infoSideElement" id="iseBottom">
-              <h2 class="iSEhead lapText">GTAVI CHEAT CODES</h2>
+              <h2 class="iSEhead lapText">GTAVI CODES</h2>
               <p class="iSEpara lapText">DO NOT LEAK: -> <- <...</p>
             </li>
           </ul>

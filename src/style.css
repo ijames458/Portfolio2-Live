@@ -43,51 +43,19 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 1px greenyellow;
 }
 
-#monNav {
-  top: 43.6%;
-  left: 620px;
-  /* left: 413.44px; */
-
-  right: 0;
-
-  width: 625px;
-  height: 30.7vh;
-}
-
-#lapNav {
-  top: 65.5%;
-  left: 355px;
-
-  bottom: 0;
-
-  width: 260px;
-  height: 15vh;
-}
-
-#phnNav {
-  top: 79.5%;
-  left: 1465px;
-
-  right: 0;
-  bottom: 0;
-
-  width: 115px;
-  height: 7vh;
-}
-
-#defaultNav {
+#backNav {
   top: auto;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 
-  width: 1200px;
-  height: 150px;
+  width: 200px;
+  height: 12vh;
 
   visibility: hidden;
+  border: solid 1px greenyellow;
 }
 
 .hoverTextWrapper {
@@ -97,13 +65,13 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.2s ease-in-out;
+  /* transition: transform 0.2s ease-in-out; */
 }
 
-.navButton:hover .hoverTextWrapper {
+/* .navButton:hover .hoverTextWrapper {
   transform: scale(1.4);
   transition: transform 0.2s ease-in-out;
-}
+} */
 
 .hoverText {
   text-align: center;
@@ -114,6 +82,10 @@ canvas {
   padding: 0;
   font-size: clamp(1rem, 2vh + 1rem, 2.2rem);
   /* display: none; */
+}
+
+.navButton:hover .hoverText {
+  color: rgba(60, 96, 128, 1);
 }
 
 .contentWrapper {
@@ -157,11 +129,11 @@ canvas {
 }
 
 #desktopMonText h1 {
-  font-size: 60px;
+  font-size: clamp(1rem, 7vh - 0.3rem, 3.75rem);
 }
 
 #desktopMonText h2 {
-  font-size: 30px;
+  font-size: clamp(0.6rem, 4vh - 0.28rem, 1.875rem);
 }
 
 #desktopMonText p {
@@ -239,6 +211,10 @@ canvas {
   justify-content: end;
 }
 
+.mTopBar p {
+  font-size: clamp(0.438rem, 3vh - 0.2rem, 1rem);
+}
+
 .windowName {
   flex-grow: 1;
   padding-left: 10px;
@@ -282,30 +258,31 @@ canvas {
 #projHeadlines h1 {
   text-align: center;
 
-  font-size: 80px;
+  font-size: clamp(1rem, 10vh - 1rem, 5rem);
+  margin-top: 0.2em;
   margin-bottom: 0;
 }
 
 #projHeadlines h2 {
   text-align: center;
-
+  font-size: clamp(0.5rem, 4vh - 0.4rem, 1.875rem);
   font-style: italic;
 }
 
 #studioPlayBar {
   width: 100%;
-  height: 12%;
+  height: 50px;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 5em;
+  gap: 20px;
 
-  margin-top: 2em;
+  margin-top: 0em;
 }
 
 .sPBItem {
-  width: 10%;
+  width: 70px;
   height: 100%;
 
   border-radius: 10px;
@@ -329,6 +306,7 @@ canvas {
 #projDetails {
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 .pDetailsItem {
@@ -345,12 +323,13 @@ canvas {
 
   margin-top: 0.3em;
   margin-bottom: 0;
-  font-size: 40px;
+  font-size: clamp(0.75rem, 9vh - 0.5rem, 2.5rem);
 }
 
 #shortDesc p {
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: clamp(0.625rem, 4vh - 0.2rem, 0.875rem);
 }
 
 #roles-activities h2 {
@@ -358,15 +337,16 @@ canvas {
 
   margin-top: 0.3em;
   margin-bottom: 0;
-  font-size: 40px;
+  font-size: clamp(0.75rem, 9vh - 0.5rem, 2.5rem);
 }
 
 #roles-activities p {
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: clamp(0.625rem, 4vh - 0.2rem, 0.875rem);
 }
 
-#gallery {
+#projGallery {
   width: 100%;
   height: 20%;
 
@@ -375,7 +355,7 @@ canvas {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 3em;
+  gap: 1em;
 
   border-top: solid 1px;
   background-color: black
@@ -441,11 +421,10 @@ canvas {
   align-items: center;
 
   border: solid 1px rgba(130, 130, 130, 1);
-  margin-left: 5em;
 }
 
 #path p {
-  font-size: 15px;
+  font-size: clamp(0.438rem, 2vh - 0.1rem, 1rem);
   color: rgba(130, 130, 130, 1);
   margin-left: 10px;
 }
@@ -462,7 +441,7 @@ canvas {
 }
 
 #searchFolder p {
-  font-size: 15px;
+  font-size: clamp(0.438rem, 2vh - 0.1rem, 1rem);
   color: rgba(130, 130, 130, 1);
   margin-left: 10px;
 }
@@ -493,12 +472,13 @@ canvas {
 }
 
 .fListOption h2 {
-  font-size: 15px;
+  font-size: clamp(0.625rem, 2vh - 0.1rem, 1rem);
+  /* font-size: 15px; */
   margin-left: 5px;
 }
 
 .fListOption p {
-  font-size: 15px;
+  font-size: clamp(0.625rem, 2vh - 0.1rem, 1rem);
   margin-left: 15px;
 }
 
@@ -572,12 +552,12 @@ canvas {
 }
 
 .sPText h2 {
-  font-size: 15px;
+  font-size: clamp(0.625rem, 2vh - 0.4rem, 1rem);
   margin-bottom: 0;
 }
 
 .sPText p {
-  font-size: 12px;
+  font-size: clamp(0.625rem, 2vh - 0.4rem, 0.75rem);
   margin-top: 5px;
 }
 
@@ -617,12 +597,12 @@ canvas {
 
 #sPropertiesContent {
   width: 90%;
-  height: 85%;
+  height: 80%;
 
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
 
   display: flex;
   flex-direction: column;
@@ -630,6 +610,51 @@ canvas {
   align-content: flex-start;
 
   background-color: rgba(255, 255, 255, 1);
+  border: solid 1px rgba(180, 180, 180, 1);
+}
+
+#sPropertySelector {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(200, 200, 200, 1);
+}
+
+.sPropertyOption {
+  height: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  border-right: solid 1px rgba(180, 180, 180, 1);
+  background-color: rgba(200, 200, 200, 1);
+}
+
+.sPropertyOption:hover {
+  cursor: pointer;
+  background-color: rgba(201, 228, 255, 1);
+}
+
+.sPropertyOption p {
+  font-size: 15px;
+  margin: 0;
+}
+
+.curPropertySection {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+#sPropertiesInfos {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.infosSection {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 .sProperty {
@@ -645,29 +670,26 @@ canvas {
 }
 
 #descProperty {
-  height: 35%;
+  flex-grow: 1;
+  border-bottom: 0;
 }
 
-#sProjGallery {
-  height: 40%;
-  overflow: hidden;
-}
-
-#spgWrapper {
-  width: 600%;
-  height: 100%;
+#gallerySection {
   display: flex;
-
-  cursor: pointer
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow: auto;
 }
 
 .sGalleryElement {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 30%;
 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 #projectBar {
@@ -713,6 +735,7 @@ canvas {
 }
 
 #searchMock p {
+  font-size: clamp(0.25rem, 2.6vh - 0.1rem, 1rem);
   font-style: italic;
 }
 
@@ -743,11 +766,11 @@ canvas {
 }
 
 #desktopLapText h1 {
-  font-size: 40px;
+  font-size: clamp(1rem, 7vh - 0.8rem, 2.5rem);
 }
 
 #desktopLapText h2 {
-  font-size: 30px;
+  font-size: clamp(0.625rem, 5vh - 0.5rem, 1.875rem);
 }
 
 #laptopScreen {
@@ -784,6 +807,7 @@ canvas {
 .appTopBar p {
   margin-right: 1.5em;
   text-align: end;
+  font-size: clamp(0.625rem, 4vh - 0.1rem, 1rem);
 }
 
 .lWindowClose {
@@ -853,12 +877,12 @@ canvas {
 }
 
 .iSEhead {
-  font-size: 15px;
+  font-size: clamp(0.25rem, 2vh - 0.2rem, 1rem);
   margin-left: 2px;
 }
 
 .iSEpara {
-  font-size: 10px;
+  font-size: clamp(0.25rem, 2vh - 0.6rem, 0.625rem);
   margin-left: 2px;
 }
 
@@ -868,14 +892,17 @@ canvas {
 
   background-color: rgba(255, 255, 255, 1);
   border-bottom-right-radius: 10px;
+  overflow: auto;
 }
 
 #infoMain h2 {
   text-align: center;
+  font-size: clamp(1rem, 4vh - 0.1rem, 1.563rem);
 }
 
 #infoMain p {
   margin-left: 5px;
+  font-size: clamp(0.75rem, 3vh - 0.2rem, 1rem);
 }
 
 #skills-experience {
@@ -924,7 +951,7 @@ canvas {
 
   justify-content: center;
   background-color: rgba(200, 200, 200, 1);
-  font-size: 12px;
+  font-size: clamp(0.5rem, 2vh - 0.2rem, 0.813rem);
 }
 
 .categoryDivide {
@@ -933,17 +960,18 @@ canvas {
 
   font-style: italic;
   background-color: rgba(222, 222, 222, 1);
+  font-size: clamp(0.625rem, 3vh - 0.3rem, 1rem);
 }
 
 .colMain {
-  height: 15%;
+  height: 20%;
 
   font-size: 13px;
   background-color: rgba(255, 255, 255, 1);
 }
 
 .colAltMain {
-  height: 15%;
+  height: 20%;
   font-size: 13px;
   background-color: rgba(233, 233, 233, 1);
 }
@@ -967,6 +995,7 @@ canvas {
 .expText p {
   text-align: left;
   padding-left: 8px;
+  font-size: clamp(0.438rem, 2vh - 0.2rem, 0.813rem);
 }
 
 #funFacts {
@@ -1011,7 +1040,6 @@ canvas {
 }
 
 .fFTextWrapper {
-  font-size: 40px;
   transition: transform 0.2s ease-in-out;
   color: rgba(150, 200, 255, 1);
 }
@@ -1019,6 +1047,10 @@ canvas {
 .fFButton:hover .fFTextWrapper {
   transform: scale(1.5);
   transition: transform 0.2s ease-in-out;
+}
+
+.fFTextWrapper p {
+  font-size: clamp(1rem, 9vh - 1rem, 2.5rem);
 }
 
 #fFForward {
@@ -1036,6 +1068,10 @@ canvas {
 
   font-size: 22px;
   color: rgba(255, 255, 255, 1);
+}
+
+.fFText {
+  font-size: clamp(0.5rem, 3vh - 0.35rem, 1.375rem);
 }
 
 .progressIndicatorBar {
@@ -1072,7 +1108,7 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 4%;
 
   width: 80%;
   height: 10%;
@@ -1119,6 +1155,7 @@ canvas {
 .abNameText {
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 
 
@@ -1136,40 +1173,218 @@ canvas {
   height: 42.5vh;
 
   visibility: hidden;
+  /* border: solid 1px green; */
 }
 
 #phoneScreenText {
   text-align: center;
-  padding-top: 4em;
   font-size: 20px;
   flex-grow: 1;
 }
 
+#phoneScreenText h1 {
+  font-size: clamp(0.625rem, 5vh - 0.3rem, 2.5rem);
+}
+
+#phoneScreenText h2 {
+  font-size: clamp(0.5rem, 5vh - 0.5rem, 1.5rem);
+}
+
 #phoneApps {
   width: 100%;
-  height: 20%;
+  height: 100%;
 
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   gap: 0.2em;
   justify-content: center;
-
-  background-color: rgba(189, 189, 189, 0.7);
 }
 
 .contactApp {
-  width: 22%;
-  height: 65%;
+  width: 35%;
+  height: 35%;
 
   border: solid 1px;
-  border-radius: 15px;
+  border-radius: 10px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
+  background-color: rgba(190, 190, 190, 0.3);
 }
 
 .contactApp:hover {
-  background-color: rgba(31, 31, 31, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*Mobile Layout Switches*/
+
+@media (max-height: 768px) {
+
+  .mTopBar {
+    height: 10%;
+  }
+
+  #modalContent {
+    height: 84%;
+  }
+
+  .projectInfos {
+    height: 70%;
+  }
+
+  #sProjWindowTopBar p {
+    font-size: clamp(0.438rem, 3vh - 0.1rem, 1rem);
+  }
+
+  #studioPlayBar {
+    height: 40px;
+  }
+
+  .sPBItem {
+    width: 50px;
+  }
+
+  #finderContent {
+    height: 87%;
+  }
+
+  #smallProjectsList {
+    margin-top: 0;
+    overflow: auto;
+  }
+
+  #path {
+    height: 8%;
+  }
+
+  #searchFolder {
+    height: 8%;
+  }
+
+  #listTitle {
+    margin-top: 1em;
+  }
+
+  .smallProjectContainer {
+    width: 40%;
+    height: 30%;
+  }
+
+  #sPropertiesContent {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+  }
+
+  .sGalleryElement {
+    width: 100%;
+    height: 50%;
+  }
+
+  .sPText h2 {
+    font-size: clamp(0.625rem, 2vh - 0.1rem, 1rem);
+  }
+
+  .sPText p {
+    font-size: clamp(0.625rem, 2vh - 0.1rem, 0.75rem);
+  }
+
+  .appTopBar {
+    height: 12%;
+  }
+
+  .abBarElement {
+    border-radius: 7px;
+  }
+}
+
+
+
+/* @media (max-height: 640px) {
+  #projDetails {
+    overflow: auto;
+  }
+} */
+
+/*XS*/
+@media (max-height: 475px) {
+
+  #studioPlayBar {
+    height: 30px;
+  }
+
+  .sPBItem {
+    width: 40px;
+  }
+
+  #folderList {
+    width: 20%;
+  }
+
+
+  #smallProjectsList {
+    width: 80%;
+  }
+
+  .smallProjectContainer {
+    width: 75%;
+    height: 50%;
+  }
+
+  .sPText h2 {
+    font-size: clamp(0.688rem, 4vh - 0.1rem, 1rem);
+  }
+
+  .sPText p {
+    font-size: clamp(0.625rem, 4vh - 0.1rem, 0.938rem);
+  }
+
+  #seInfo {
+    overflow: auto;
+  }
+
+  .colHead {
+    height: 10%;
+  }
+
+  .categoryDivide {
+    height: 10%;
+  }
+
+  .colMain {
+    height: 40%;
+  }
+
+  .colAltMain {
+    height: 40%;
+  }
+
+  .expText p {
+    font-size: clamp(0.313rem, 3vh - 0.1rem, 1rem);
+  }
+
+  .progressIndicatorBar {
+    height: 10%;
+  }
+
+  .progressIndicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .abBarElement {
+    border-radius: 5px;
+    width: 15%;
+  }
+
+  .abNameText {
+    font-size: 14px;
+  }
+
+  .contactApp {
+    border-radius: 7px;
+  }
 }

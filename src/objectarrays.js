@@ -1,10 +1,11 @@
-import { ToDefault, ToTarget } from './cameranimations';
-import { startingPos, startingRot, monitorView, laptopView, laptopRotation, phoneView, phoneRotation, } from './main';
+import { Vector3 } from 'three';
+import { ToDefault, ToTarget } from './tweenanimations';
+import { startingPos, startingRot, monitorView, laptopView, laptopRotation, phoneView, phoneRotation } from './main';
 export var navButtonOBJs = [
     {
         "id": "monNav",
-        "MoveTo": function (cam, group, duration, monHTML, lapHTML, phnHTML, navButtons) {
-            ToTarget(monitorView, startingRot, cam, group, duration, monHTML, navButtons);
+        "MoveTo": function (cam, group, duration, monHTML, lapHTML, phnHTML, activeButtons) {
+            ToTarget(monitorView, startingRot, cam, group, duration, monHTML, activeButtons);
             var lapWindows = document.getElementsByClassName("abWindow");
             lapHTML.style.visibility = "hidden";
             for (var i = 0; i < lapWindows.length; i++) {
@@ -13,27 +14,30 @@ export var navButtonOBJs = [
 
             phnHTML.style.visibility = "hidden";
         },
-        "ActiveTPos": 0 + 'em',
-        "ActiveLPos": 0 + 'em',
-        "ActiveLPosAlt": "auto",
-        "ActiveWidth": 150 + 'px',
-        "ActiveHeight": 40 + 'vh',
+        "DefaultPos": new Vector3(0.085, 5.58, 3),
+        "DefaultRot": new Vector3(0, 0, 0),
+        "DefaultScl": new Vector3(1, 1, 1),
+        "DefTextXPos": -0.42,
+
+        "activeScl": new Vector3(0.07, 0.04, 0.1),
+        "activeTextPos": -0.55,
+        "activeTextScl": new Vector3(1.35, 2.2, 1),
+
+        "lapPos": new Vector3(-0.66, 0.18, -1.2),
+        "lapRot": new Vector3(0, 0, 0),
+
+        "phnPos": new Vector3(-0.22, -1.2, -0.4),
+        "phnRot": new Vector3(0, 0, -0.1),
+
+
         "ActiveText": "<",
         "ActiveTextAlt": ">",
-
-        "DefaultTPos": 43.6 + '%',
-        "DefaultLPos": 620 + 'px',
-        "DefaultWidth": 625 + 'px',
-        "DefaultHeight": 30.7 + 'vh',
-        "HbWRatio": 0.59327217125, //For every 1px of window height change, this value is applied to the button width (Calculated by dividing the change between button width values from one window height value to another)
-        "HbPRatio": 0.31924882629, //For every 1px of window height change, this value is applied to the button left position (Calculated by dividing the change between button left position values from one window height value to another)
-        "WbPRatio": 0.5, //For every 1px of window width change, this value is applied to the button left position (Calculated by dividing the change between button left position values from one window width value to another)
         "DefaultText": "Projects"
     },
     {
         "id": "lapNav",
-        "MoveTo": function (cam, group, duration, monHTML, lapHTML, phnHTML, navButtons) {
-            ToTarget(laptopView, laptopRotation, cam, group, duration, lapHTML, navButtons);
+        "MoveTo": function (cam, group, duration, monHTML, lapHTML, phnHTML, activeButtons) {
+            ToTarget(laptopView, laptopRotation, cam, group, duration, lapHTML, activeButtons);
             var monWindows = document.getElementsByClassName("monWindows")
             monHTML.style.visibility = "hidden";
             for (var i = 0; i < monWindows.length; i++) {
@@ -42,26 +46,28 @@ export var navButtonOBJs = [
 
             phnHTML.style.visibility = "hidden";
         },
-        "ActiveTPos": 'auto',
-        "ActiveLPos": 0 + 'em',
-        "ActiveWidth": 170 + 'px',
-        "ActiveHeight": 34.2 + 'vh',
+        "DefaultPos": new Vector3(-1.9, 4.95, 3),
+        "DefaultRot": new Vector3(0, 0, 0),
+        "DefaultScl": new Vector3(1, 1, 1),
+        "DefTextXPos": -0.49,
+
+        "activeScl": new Vector3(0.12, 0.07, 0.1),
+        "activeTextPos": -0.32,
+        "activeTextScl": new Vector3(0.6, 1, 1),
+
+        "monPos": new Vector3(-0.24, -0.185, -1.2),
+        "monRot": new Vector3(0, 0, 0),
+
+        "phnPos": new Vector3(-0.27, -1.2, -0.2),
+        "phnRot": new Vector3(0, 0, 0.05),
+
         "ActiveText": "<",
-
-
-        "DefaultTPos": 65.5 + '%',
-        "DefaultLPos": 352 + 'px',
-        "DefaultWidth": 260 + 'px',
-        "DefaultHeight": 15 + 'vh',
-        "HbWRatio": 0.26291079812, //For every 1px of window height change, this value is applied to the button width (Calculated by dividing the change between button width values from one window height value to another)
-        "HbPRatio": 0.58215962441, //For every 1px of window height change, this value is applied to the button left position (Calculated by dividing the change between button left position values from one window height value to another)
-        "WbPRatio": 0.5, //For every 1px of window width change, this value is applied to the button left position (Calculated by dividing the change between button left position values from one window width value to another)
         "DefaultText": "About Me",
     },
     {
         "id": "phnNav",
-        "MoveTo": function (cam, group, duration, monHTML, lapHTML, phnHTML, navButtons) {
-            ToTarget(phoneView, phoneRotation, cam, group, duration, phnHTML, navButtons);
+        "MoveTo": function (cam, group, duration, monHTML, lapHTML, phnHTML, activeButtons) {
+            ToTarget(phoneView, phoneRotation, cam, group, duration, phnHTML, activeButtons);
             var monWindows = document.getElementsByClassName("monWindows")
             monHTML.style.visibility = "hidden";
             for (var i = 0; i < monWindows.length; i++) {
@@ -74,25 +80,27 @@ export var navButtonOBJs = [
                 lapWindows[i].style.visibility = "hidden";
             }
         },
-        "ActiveTPos": 'auto',
-        "ActiveLPos": "auto",
-        "ActiveWidth": 100 + 'px',
-        "ActiveHeight": 15 + 'vh',
-        "ActiveText": ">",
+        "DefaultPos": new Vector3(2.65, 4.5, 3),
+        "DefaultRot": new Vector3(0, 0, 0),
+        "DefaultScl": new Vector3(1, 1, 1),
+        "DefTextXPos": -0.41,
 
-        "DefaultTPos": 79.5 + '%',
-        "DefaultLPos": 1465 + 'px',
-        "DefaultWidth": 115 + 'px',
-        "DefaultHeight": 7 + 'vh',
-        "HbWRatio": 0.05769230769, //For every 1px of window height change, this value is applied to the button width (Calculated by dividing the change between button width values from one window height value to another)
-        "HbPRatio": -0.5352112676, //For every 1px of window height change, this value is applied to the button left position (Calculated by dividing the change between button left position values from one window height value to another)
-        "WbPRatio": 0.5, //For every 1px of window width change, this value is applied to the button left position (Calculated by dividing the change between button left position values from one window width value to another)
+        "activeScl": new Vector3(0.18, 0.098, 0.2),
+        "activeTextPos": -0.2,
+        "activeTextScl": new Vector3(0.45, 0.8, 1),
+
+        "monPos": new Vector3(0.235, -0.185, -1.2),
+        "monRot": new Vector3(0, 0, 0),
+
+        "lapPos": new Vector3(-0.45, -0.185, -1.2),
+        "lapRot": new Vector3(0, 0, 0),
+
         "DefaultText": "Contact",
     },
     {
         "id": "defaultNav",
-        "MoveTo": function (cam, group, duration, monHTML, lapHTML, phnHTML, navButtons) {
-            ToDefault(startingPos, startingRot, cam, group, duration, navButtons);
+        "MoveTo": function (cam, group, duration, monHTML, lapHTML, phnHTML, activeButtons) {
+            ToDefault(startingPos, startingRot, cam, group, duration, activeButtons);
             var monWindows = document.getElementsByClassName("monWindows")
             monHTML.style.visibility = "hidden";
             for (var i = 0; i < monWindows.length; i++) {
@@ -104,14 +112,8 @@ export var navButtonOBJs = [
             for (var i = 0; i < lapWindows.length; i++) {
                 lapWindows[i].style.visibility = "hidden";
             }
-
             phnHTML.style.visibility = "hidden";
-        },
-        "ActiveTPos": 'auto',
-        "ActiveLPos": 50 + '%',
-        "ActiveWidth": 350 + 'px',
-        "ActiveHeight": 14 + 'vh',
-        "ActiveText": "V"
+        }
     }
 ]
 
@@ -135,15 +137,6 @@ export var windowRatios = [
         "WbPRatio": 0.5, //For every 1px of window width change, this value is applied to the button left position (Calculated by dividing the change between button left position values from one window width value to another)
     }
 ]
-
-
-
-
-
-
-
-
-
 
 export var projectOBJs = [
     {
@@ -245,7 +238,7 @@ export var projectOBJs = [
         "StudioBackground": "rgba(0, 0, 0, 1)",
         "Release": "Finished: 2020",
         "Link": "Not-available-right-now.",
-        "About": "A 3D Game putting your flight skills to the test!. Twist, Turn and soar your way around around the stage, flying through all of the rings in order to make it to the finish line!",
+        "About": "A 3D Game putting your flight skills to the test! Twist, Turn and soar your way around around the stage, flying through all of the rings in order to make it to the finish line!",
         "RoleAct": "My first, and so far only, solo project which I made for my final assignment for my industrial tech class in Year 12. Developing it solo was a huge learning curve, given that I was responsible for almost everything that went into it, and especially as I had never programmed anything before at the time. In general though, I tried to keep the flying mechanics to a more arcade-y level, as my inspiration was Pilotwings on the NES, and trying to make realistic plane physics with no prior progamming experience would not have ended well.",
         "BackgroundCol": "rgba(255, 255, 255, 1)",
         "TextCol": "rgba(0, 0, 0, 1)",
@@ -269,6 +262,19 @@ export var projectLinkOBJs = [
             window.open(link, "_blank").focus();
         }
     }
+]
+
+export var propertySelectors = [
+    {
+        "id": "aboutButton",
+        "scrollValue": "-2"
+    },
+    {
+        "id": "galleryButton",
+        "scrollValue": "2"
+    }
+
+
 ]
 
 export var smallProjectOBJs = [
