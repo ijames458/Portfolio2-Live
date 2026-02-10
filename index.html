@@ -2,35 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/Portfolio2-Remake/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>package</title>
-  <script type="module" crossorigin src="/Portfolio2-Remake/assets/index-DVltwwov.js"></script>
-  <link rel="stylesheet" crossorigin href="/Portfolio2-Remake/assets/index-CLPrGX2-.css">
+  <script type="module" crossorigin src="/Portfolio2-Remake/assets/index-Ck2i8kuL.js"></script>
+  <link rel="stylesheet" crossorigin href="/Portfolio2-Remake/assets/index-DjnOCyoV.css">
 </head>
 
 <body>
   <canvas id="mainScene"></canvas>
   <section id="navButtonWrapper">
-    <div class="navButton" id="monNav">
+    <div class="navButton" id="backNav">
       <div class="hoverTextWrapper">
-        <p class="monText hoverText" id="projNavText">Projects</p>
-      </div>
-    </div>
-    <div class="navButton" id="lapNav">
-      <div class="hoverTextWrapper">
-        <p class="monText hoverText" id="aboutNavText">About Me</p>
-      </div>
-    </div>
-    <div class="navButton" id="phnNav">
-      <div class="hoverTextWrapper">
-        <p class="monText hoverText" id="contactNavText">Contact</p>
-      </div>
-    </div>
-    <div class="navButton" id="defaultNav">
-      <div class="hoverTextWrapper">
-        <p class="monText hoverText" id="backNavText">V</p>
+        <p class="monText hoverText" id="backNavText">Back</p>
       </div>
     </div>
   </section>
@@ -78,7 +63,7 @@
           <p class="monText" id="roleText"></p>
         </div>
       </div>
-      <ul id="gallery">
+      <ul id="projGallery">
         <li class="monGalleryElement modal" id="monGallery1"></li>
         <li class="monGalleryElement modal" id="monGallery2"></li>
         <li class="monGalleryElement modal" id="monGallery3"></li>
@@ -115,16 +100,13 @@
             <p class="monText">Pictures</p>
           </li>
           <li class="fListOption">
-            <p class="monText">CVs+CoverLetters</p>
+            <p class="monText">CVs</p>
           </li>
           <li class="fListOption">
-            <p class="monText">GameRecordings</p>
+            <p class="monText">Games</p>
           </li>
           <li class="fListOption">
             <p class="monText">Portfolio2</p>
-          </li>
-          <li class="fListOption">
-            <p class="monText">TempScreenshots</p>
           </li>
         </ul>
         <ul class="finderElement" id="smallProjectsList">
@@ -144,14 +126,14 @@
             <div class="smallProjectIcon" style="background-image: url(/Portfolio2-Remake/assets/vaporwave-CBQR9alE.webp)">
             </div>
             <div class="sPText">
-              <h2 class="monText">Mountain Valley</h2>
+              <h2 class="monText">VaporWave</h2>
               <p class="monText">This PC\Small Projects</p>
             </div>
           </li>
           <li class="smallProjectContainer" id="WII">
             <div class="smallProjectIcon" style="background-image: url(/Portfolio2-Remake/assets/wiiu-hIppqgXT.webp)"></div>
             <div class="sPText">
-              <h2 class="monText">Mountain Valley</h2>
+              <h2 class="monText">Wii U</h2>
               <p class="monText">This PC\Small Projects</p>
             </div>
           </li>
@@ -159,7 +141,7 @@
             <div class="smallProjectIcon"
               style="background-image: url(/Portfolio2-Remake/assets/trainstation-B2wTE486.webp)"></div>
             <div class="sPText">
-              <h2 class="monText">Mountain Valley</h2>
+              <h2 class="monText">Train Station</h2>
               <p class="monText">This PC\Small Projects</p>
             </div>
           </li>
@@ -167,7 +149,7 @@
             <div class="smallProjectIcon" style="background-image: url(/Portfolio2-Remake/assets/cubethumbnail-BeNgWOaO.webp)">
             </div>
             <div class="sPText">
-              <h2 class="monText">Mountain Valley</h2>
+              <h2 class="monText">Moving Cube</h2>
               <p class="monText">This PC\Small Projects</p>
             </div>
           </li>
@@ -191,20 +173,30 @@
       </div>
       <div id="sPropertiesContainer">
         <ul id="sPropertiesContent">
-          <li class="sProperty">
-            <p class="monText" id="sProjName"></p>
-          </li>
-          <li class="sProperty">
-            <p class="monText" id="sProjType"></p>
-          </li>
-          <li class="sProperty">
-            <p class="monText" id="sProjFinish"></p>
-          </li>
-          <li class="sProperty" id="descProperty">
-            <p class="monText" id="sProjDesc"></p>
-          </li>
-          <li class="sProperty" id="sProjGallery">
-            <ul id="spgWrapper">
+          <ul id="sPropertySelector">
+            <li class="sPropertyOption curPropertySection" id="aboutButton">
+              <p class="monText">About</p>
+            </li>
+            <li class="sPropertyOption" id="galleryButton">
+              <p class="monText">Gallery</p>
+            </li>
+          </ul>
+          <ul id="sPropertiesInfos">
+            <ul class="infosSection" id="aboutSection">
+              <li class="sProperty">
+                <p class="monText" id="sProjName"></p>
+              </li>
+              <li class="sProperty">
+                <p class="monText" id="sProjType"></p>
+              </li>
+              <li class="sProperty">
+                <p class="monText" id="sProjFinish"></p>
+              </li>
+              <li class="sProperty" id="descProperty">
+                <p class="monText" id="sProjDesc"></p>
+              </li>
+            </ul>
+            <ul class="infosSection" id="gallerySection">
               <li class="sGalleryElement modal" id="sGallery1">
                 <video class="videocontainer" id="sGalleryVideo">
                 </video>
@@ -215,9 +207,9 @@
               <li class="sGalleryElement modal" id="sGallery5"></li>
               <li class="sGalleryElement modal" id="sGallery6"></li>
               <li class="sGalleryElement modal" id="sGallery7"></li>
+              </li>
             </ul>
-          </li>
-        </ul>
+          </ul>
       </div>
     </div>
     <ul id="projectBar">
@@ -225,7 +217,7 @@
         <div class="pBElementIcon" style="background-image: url(&quot;data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20fill='%23000000'%20width='800px'%20height='800px'%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M27%2018.039L16%209.501%205%2018.039V14.56l11-8.54%2011%208.538v3.481zm-2.75-.31v8.251h-5.5v-5.5h-5.5v5.5h-5.5v-8.25L16%2011.543l8.25%206.186z'/%3e%3c/svg%3e&quot;)"></div>
       </li>
       <li class="pBElementContainer" id="searchMock">
-        <p class="monText">Last Updated: 15/01/2026</p>
+        <p class="monText">Last Updated: 10/02/2026</p>
       </li>
       <li class="pBElementContainer project" id="P1">
         <div class="pBElementIcon" style="background-image: url(data:image/webp;base64,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)"></div>
@@ -270,19 +262,19 @@
               <p class="iSEpara lapText">Hi, I'm Isaac James! I'm a...</p>
             </li>
             <li class="infoSideElement">
-              <h2 class="iSEhead lapText">List-Of-Random-Stuff</h2>
+              <h2 class="iSEhead lapText">Random-Stuff</h2>
               <p class="iSEpara lapText">Dimensions of ISS: 109 metr...</p>
             </li>
             <li class="infoSideElement">
               <h2 class="iSEhead lapText">Games Wish List</h2>
-              <p class="iSEpara lapText">Tunic, Risk of Rain: Seekers of...</p>
+              <p class="iSEpara lapText">Tunic, Arc Raid...</p>
             </li>
             <li class="infoSideElement">
               <h2 class="iSEhead lapText">SERVER COORDS:</h2>
-              <p class="iSEpara lapText">x:342 y:24 z:2359 skeleton spaw...</p>
+              <p class="iSEpara lapText">x:342 y:24 z:2359 main bas...</p>
             </li>
             <li class="infoSideElement" id="iseBottom">
-              <h2 class="iSEhead lapText">GTAVI CHEAT CODES</h2>
+              <h2 class="iSEhead lapText">GTAVI CODES</h2>
               <p class="iSEpara lapText">DO NOT LEAK: -> <- <...</p>
             </li>
           </ul>
