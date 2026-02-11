@@ -35,3 +35,8 @@ dist-ssr
 !public/DeskModel/**/*.jpg
 !public/DeskModel/**/*.png
 !public/DeskModel/**/*.gltf
+
+# Allow Portfolio content
+!public/Images/**/*.jpg
+!public/Images/**/*.webp
+!public/Videos/**/*.webm
