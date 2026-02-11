@@ -422,7 +422,7 @@ function OpenProject() {
       for (k = 0; k < projectLinkButtons.length; k++) {
         if (projectLinkButtons[k].id == "studio") {
           projectLinkButtons[k].setAttribute("href", projectOBJs[i].Developers);
-          projectLinkButtons[k].style.backgroundImage = "url(/public/Images/SiteNav/" + projectOBJs[i].StudioLogo;
+          projectLinkButtons[k].style.backgroundImage = "url(./Images/SiteNav/" + projectOBJs[i].StudioLogo;
           projectLinkButtons[k].style.backgroundColor = projectOBJs[i].StudioBackground;
         } else {
           projectLinkButtons[k].setAttribute("href", projectOBJs[i].Link);
@@ -434,7 +434,7 @@ function OpenProject() {
 
       var galleryElements = document.getElementsByClassName("monGalleryElement");
       for (var k = 0; k < projectOBJs[i].Gallery.length; k++) {
-        galleryElements[k].style.backgroundImage = "url(/public/Images/" + projectOBJs[i].ImagesLocation + projectOBJs[i].Gallery[k] + ")";
+        galleryElements[k].style.backgroundImage = "url(./Images/" + projectOBJs[i].ImagesLocation + projectOBJs[i].Gallery[k] + ")";
       }
     }
   }
@@ -483,9 +483,9 @@ function OpenSmallProject() {
         var string = smallProjectOBJs[i].Gallery[k];
         if (string.substring(string.length - 4) == "webm" && smallProjectOBJs[i].id == this.id) {
           galleryElements[k].style.backgroundImage = "";
-          sGalleryVideo.setAttribute("src", "/public/Videos/" + smallProjectOBJs[i].Gallery[k]);
+          sGalleryVideo.setAttribute("src", "./Videos/" + smallProjectOBJs[i].Gallery[k]);
         } else {
-          galleryElements[k].style.backgroundImage = "url(/public/Images/" + smallProjectOBJs[i].ImagesLocation + smallProjectOBJs[i].Gallery[k] + ")";
+          galleryElements[k].style.backgroundImage = "url(./Images/" + smallProjectOBJs[i].ImagesLocation + smallProjectOBJs[i].Gallery[k] + ")";
           console.log(galleryElements[k].style.backgroundImage);
         }
       }
