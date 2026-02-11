@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="preload" href="style.css" as="style.css">
+  <link rel="preload" href="main.js" as="script">
+  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>package</title>
 </head>
@@ -49,7 +52,7 @@
         <h2 class="monText" id="release"></h2>
         <ul id="studioPlayBar">
           <li class="sPBItem" id="studio"></li>
-          <li class="sPBItem" id="playLink" style="background-image: url(/src/Images/SiteNav/playlink.svg)"></li>
+          <li class="sPBItem" id="playLink" style="background-image: url(/public/Images/SiteNav/playlink.svg)"></li>
         </ul>
       </div>
       <div class="projectInfos" id="projDetails">
@@ -114,7 +117,8 @@
             <hr>
           </div>
           <li class="smallProjectContainer" id="MTV">
-            <div class="smallProjectIcon" style="background-image: url(/src/Images/SmallProjects/Mount/mountains.webp)">
+            <div class="smallProjectIcon"
+              style="background-image: url(/public/Images/SmallProjects/Mount/mountains.webp)">
             </div>
             <div class="sPText">
               <h2 class="monText">Mountain Valley</h2>
@@ -122,7 +126,8 @@
             </div>
           </li>
           <li class="smallProjectContainer" id="VPW">
-            <div class="smallProjectIcon" style="background-image: url(/src/Images/SmallProjects/VPW/vaporwave.webp)">
+            <div class="smallProjectIcon"
+              style="background-image: url(/public/Images/SmallProjects/VPW/vaporwave.webp)">
             </div>
             <div class="sPText">
               <h2 class="monText">VaporWave</h2>
@@ -130,7 +135,8 @@
             </div>
           </li>
           <li class="smallProjectContainer" id="WII">
-            <div class="smallProjectIcon" style="background-image: url(/src/Images/SmallProjects/WiiU/wiiu.webp)"></div>
+            <div class="smallProjectIcon" style="background-image: url(/public/Images/SmallProjects/WiiU/wiiu.webp)">
+            </div>
             <div class="sPText">
               <h2 class="monText">Wii U</h2>
               <p class="monText">This PC\Small Projects</p>
@@ -138,14 +144,14 @@
           </li>
           <li class="smallProjectContainer" id="TRN">
             <div class="smallProjectIcon"
-              style="background-image: url(/src/Images/SmallProjects/Train/trainstation.webp)"></div>
+              style="background-image: url(/public/Images/SmallProjects/Train/trainstation.webp)"></div>
             <div class="sPText">
               <h2 class="monText">Train Station</h2>
               <p class="monText">This PC\Small Projects</p>
             </div>
           </li>
           <li class="smallProjectContainer" id="MVC">
-            <div class="smallProjectIcon" style="background-image: url(/src/Images/ProjectThumb/cubethumbnail.webp)">
+            <div class="smallProjectIcon" style="background-image: url(/public/Images/ProjectThumb/cubethumbnail.webp)">
             </div>
             <div class="sPText">
               <h2 class="monText">Moving Cube</h2>
@@ -153,7 +159,8 @@
             </div>
           </li>
           <li class="smallProjectContainer" id="DPB">
-            <div class="smallProjectIcon" style="background-image: url(/src/Images/ProjectThumb/boardthumbnail.webp)">
+            <div class="smallProjectIcon"
+              style="background-image: url(/public/Images/ProjectThumb/boardthumbnail.webp)">
             </div>
             <div class="sPText">
               <h2 class="monText">Departure Board</h2>
@@ -213,32 +220,33 @@
     </div>
     <ul id="projectBar">
       <li class="pBElementContainer" id="pHome">
-        <div class="pBElementIcon" style="background-image: url(/src/Images/SiteNav/home.svg)"></div>
+        <div class="pBElementIcon" style="background-image: url(/public/Images/SiteNav/home.svg)"></div>
       </li>
       <li class="pBElementContainer" id="searchMock">
         <p class="monText">Last Updated: 10/02/2026</p>
       </li>
       <li class="pBElementContainer project" id="P1">
-        <div class="pBElementIcon" style="background-image: url(/src/Images/ProjectThumb/p1logo.webp)"></div>
+        <div class="pBElementIcon" style="background-image: url(/public/Images/ProjectThumb/p1logo.webp)"></div>
       </li>
       <li class="pBElementContainer project" id="BSC">
-        <div class="pBElementIcon" style="background-image: url(/src/Images/ProjectThumb/bsc.webp)"></div>
+        <div class="pBElementIcon" style="background-image: url(/public/Images/ProjectThumb/bsc.webp)"></div>
       </li>
       <li class="pBElementContainer project" id="SPC">
-        <div class="pBElementIcon" id="SPC" style="background-image: url(/src/Images/ProjectThumb/personal-space.webp)">
+        <div class="pBElementIcon" id="SPC"
+          style="background-image: url(/public/Images/ProjectThumb/personal-space.webp)">
         </div>
       </li>
       <li class="pBElementContainer project" id="ANT">
-        <div class="pBElementIcon" style="background-image: url(/src/Images/ProjectThumb/antgame.webp)"></div>
+        <div class="pBElementIcon" style="background-image: url(/public/Images/ProjectThumb/antgame.webp)"></div>
       </li>
       <li class="pBElementContainer project" id="BSM">
-        <div class="pBElementIcon" style="background-image: url(/src/Images/ProjectThumb/basementgame.webp)"></div>
+        <div class="pBElementIcon" style="background-image: url(/public/Images/ProjectThumb/basementgame.webp)"></div>
       </li>
       <li class="pBElementContainer project" id="PLN">
-        <div class="pBElementIcon" style="background-image: url(/src/Images/Projects/PLN/ttrtitle.webp)"></div>
+        <div class="pBElementIcon" style="background-image: url(/public/Images/Projects/PLN/ttrtitle.webp)"></div>
       </li>
       <li class="pBElementContainer" id="smallProjBar">
-        <div class="pBElementIcon" style="background-image: url(/src/Images/SiteNav/moreproj.svg)"></div>
+        <div class="pBElementIcon" style="background-image: url(/public/Images/SiteNav/moreproj.svg)"></div>
       </li>
     </ul>
   </section>
@@ -390,17 +398,17 @@
       </div>
     </div>
     <ul id="aboutMeBar">
-      <li class="abBarElement" id="introBar" style="background-image: url(/src/Images/SiteNav/about.svg)">
+      <li class="abBarElement" id="introBar" style="background-image: url(/public/Images/SiteNav/about.svg)">
         <div class="abName">
           <p class="abNameText lapText">About Me</p>
         </div>
       </li>
-      <li class="abBarElement" id="sk-exBar" style="background-image: url(/src/Images/SiteNav/skillexp.svg)">
+      <li class="abBarElement" id="sk-exBar" style="background-image: url(/public/Images/SiteNav/skillexp.svg)">
         <div class="abName">
           <p class="abNameText lapText">Skills/Experience</p>
         </div>
       </li>
-      <li class="abBarElement" id="fFBar" style="background-image: url(/src/Images/SiteNav/funfacts.svg)">
+      <li class="abBarElement" id="fFBar" style="background-image: url(/public/Images/SiteNav/funfacts.svg)">
         <div class="abName">
           <p class="abNameText lapText">Fun Facts</p>
         </div>
@@ -414,10 +422,10 @@
       <h2 class="lapText">Contact Me!</h2>
     </div>
     <ul id="phoneApps">
-      <li class="contactApp" id="LI" style="background-image: url(/src/Images/SiteNav/linkedin.webp)"></li>
-      <li class="contactApp" id="GT" style="background-image: url(/src/Images/SiteNav/github.webp)"></li>
-      <li class="contactApp" id="EM" style="background-image: url(/src/Images/SiteNav/mail.webp)"></li>
-      <li class="contactApp" id="BS" style="background-image: url(/src/Images/SiteNav/bluesky.webp)"></li>
+      <li class="contactApp" id="LI" style="background-image: url(/public/Images/SiteNav/linkedin.webp)"></li>
+      <li class="contactApp" id="GT" style="background-image: url(/public/Images/SiteNav/github.webp)"></li>
+      <li class="contactApp" id="EM" style="background-image: url(/public/Images/SiteNav/mail.webp)"></li>
+      <li class="contactApp" id="BS" style="background-image: url(/public/Images/SiteNav/bluesky.webp)"></li>
     </ul>
   </section>
 </body>

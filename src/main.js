@@ -11,6 +11,9 @@ import { projectOBJs, smallProjectOBJs, projectLinkOBJs, propertySelectors, abou
 //#region ThreeJS Setup
 const scene = new THREE.Scene();
 
+// //Lock Screen to landscape
+// ScreenOrientation.lock("landscape");
+
 //Renderer setup
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#mainScene"),
@@ -43,6 +46,8 @@ export const phoneRotation = new THREE.Vector3(-79.8 * (Math.PI / 180), 0, -16.6
 camera.position.set(startingPos.x, startingPos.y, startingPos.z);
 camera.rotation.set(startingRot.x, startingRot.y, startingRot.z);
 
+var animDuration = 2000;
+
 // camera.position.set(monitorView.x, monitorView.y, monitorView.z);
 // camera.rotation.set(startingRot.x, startingRot.y, startingRot.z);
 
@@ -65,7 +70,7 @@ camera.rotation.set(startingRot.x, startingRot.y, startingRot.z);
 // controls.update();
 
 //Load Model into scene
-const loader = new GLTFLoader().setPath('DeskModel/')
+const loader = new GLTFLoader().setPath('./DeskModel/')
 console.log('loader initialised');
 loader.load('portfolio2.gltf', (gltf) => { //Callback function (active when other one finishes)
   const mesh = gltf.scene;
@@ -160,7 +165,7 @@ phoneLight.add(phoneHelper);
 //Navigation button setup
 //Loading fonts for text
 const textLoader = new FontLoader();
-const font = await textLoader.loadAsync('/Portfolio2-Remake/public/fonts/droid_sans_regular.typeface.json');
+const font = await textLoader.loadAsync('./fonts/droid_sans_regular.typeface.json');
 
 //Monitor Button
 const projectText = new THREE.Mesh(
@@ -417,7 +422,7 @@ function OpenProject() {
       for (k = 0; k < projectLinkButtons.length; k++) {
         if (projectLinkButtons[k].id == "studio") {
           projectLinkButtons[k].setAttribute("href", projectOBJs[i].Developers);
-          projectLinkButtons[k].style.backgroundImage = "url(/src/Images/SiteNav/" + projectOBJs[i].StudioLogo;
+          projectLinkButtons[k].style.backgroundImage = "url(/public/Images/SiteNav/" + projectOBJs[i].StudioLogo;
           projectLinkButtons[k].style.backgroundColor = projectOBJs[i].StudioBackground;
         } else {
           projectLinkButtons[k].setAttribute("href", projectOBJs[i].Link);
@@ -429,7 +434,7 @@ function OpenProject() {
 
       var galleryElements = document.getElementsByClassName("monGalleryElement");
       for (var k = 0; k < projectOBJs[i].Gallery.length; k++) {
-        galleryElements[k].style.backgroundImage = "url(/src/Images/" + projectOBJs[i].ImagesLocation + projectOBJs[i].Gallery[k] + ")";
+        galleryElements[k].style.backgroundImage = "url(/public/Images/" + projectOBJs[i].ImagesLocation + projectOBJs[i].Gallery[k] + ")";
       }
     }
   }
@@ -478,9 +483,9 @@ function OpenSmallProject() {
         var string = smallProjectOBJs[i].Gallery[k];
         if (string.substring(string.length - 4) == "webm" && smallProjectOBJs[i].id == this.id) {
           galleryElements[k].style.backgroundImage = "";
-          sGalleryVideo.setAttribute("src", "/src/Videos/" + smallProjectOBJs[i].Gallery[k]);
+          sGalleryVideo.setAttribute("src", "/public/Videos/" + smallProjectOBJs[i].Gallery[k]);
         } else {
-          galleryElements[k].style.backgroundImage = "url(/src/Images/" + smallProjectOBJs[i].ImagesLocation + smallProjectOBJs[i].Gallery[k] + ")";
+          galleryElements[k].style.backgroundImage = "url(/public/Images/" + smallProjectOBJs[i].ImagesLocation + smallProjectOBJs[i].Gallery[k] + ")";
           console.log(galleryElements[k].style.backgroundImage);
         }
       }
@@ -641,7 +646,8 @@ function NavButtonClick(curButton) {
     }
     backButton.style.visibility = "visible";
     ChangeActiveButtons(curButton.object.name, activeButtons);
-    curButtonOBJ.MoveTo(camera, animationsGroup, 500, monitorHTML, laptopHTML, phoneHTML, activeButtons);
+    curButtonOBJ.MoveTo(camera, animationsGroup, animDuration, monitorHTML, laptopHTML, phoneHTML, activeButtons);
+    animDuration = 1000;
   }
 }
 //TODO: Make more efficient (This would get me fired from anywhere but at least it works)
@@ -682,7 +688,8 @@ function ResetNavButtons() {
       navButtonArray[i].children[0].position.setX(navButtonOBJs[i].DefTextXPos);
       navButtonArray[i].children[0].scale.set(1, 1, 1);
     }
-    navButtonOBJs[3].MoveTo(camera, animationsGroup, 500, monitorHTML, laptopHTML, phoneHTML, navButtonArray);
+    navButtonOBJs[3].MoveTo(camera, animationsGroup, animDuration, monitorHTML, laptopHTML, phoneHTML, navButtonArray);
+    animDuration = 2000;
   }
 }
 

@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { backButton } from './main';
-import { Tween, Group } from '@tweenjs/tween.js'
+import { Tween, Group, Easing } from '@tweenjs/tween.js'
 export var currentlyAnim = false;
 
 //#region Camera movement functions
@@ -18,6 +18,7 @@ export function ToTarget(targetPosition, targetRotation, camera, animGroup, dura
 
     const toTarget = new Tween(curCamPosition)
         .to(targetPosition, duration)
+        .easing(Easing.Quadratic.InOut)
         .onUpdate(function () {
             camera.position.set(curCamPosition.x, curCamPosition.y, curCamPosition.z);
         })
@@ -36,6 +37,7 @@ export function ToTarget(targetPosition, targetRotation, camera, animGroup, dura
 
     const toTargetRot = new Tween(curCamRotation)
         .to(targetRotation, duration)
+        .easing(Easing.Quadratic.InOut)
         .onUpdate(function () {
             camera.rotation.set(curCamRotation.x, curCamRotation.y, curCamRotation.z);
         })

@@ -142,7 +142,7 @@ export var projectOBJs = [
     {
         "id": "P1",
         "Name": "Phoenix One",
-        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(62, 63, 65, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(62, 63, 65, 1) 97%), url('/src/Images/Projects/P1/p1-6.JPG') no-repeat",
+        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(62, 63, 65, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(62, 63, 65, 1) 97%), url('/public/Images/Projects/P1/p1-6.JPG') no-repeat",
         "Developers": "https://lstandsforwinner.studio/",
         "StudioLogo": "LSW-Logo.png",
         "StudioBackground": "rgba(0, 0, 0, 1)",
@@ -160,7 +160,7 @@ export var projectOBJs = [
     {
         "id": "BSC",
         "Name": "Beachside Campfire",
-        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 1) 97%), url('/src/Images/Projects/BSC/bsc-5.JPG') no-repeat",
+        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 1) 97%), url('/public/Images/Projects/BSC/bsc-5.JPG') no-repeat",
         "Developers": "https://unitguides.mq.edu.au/unit_offerings/156343/unit_guide",
         "StudioLogo": "macqlogo.webp",
         "StudioBackground": "rgba(255, 255, 255, 1)",
@@ -178,7 +178,7 @@ export var projectOBJs = [
     {
         "id": "SPC",
         "Name": "Personal Space",
-        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(10, 6, 20, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(10, 6, 20, 1) 97%), url('/src/Images/Projects/SPC/spc-3.JPG') no-repeat",
+        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(10, 6, 20, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(10, 6, 20, 1) 97%), url('/public/Images/Projects/SPC/spc-3.JPG') no-repeat",
         "Developers": "https://lstandsforwinner.studio/",
         "StudioLogo": "LSW-Logo.png",
         "StudioBackground": "rgba(0, 0, 0, 1)",
@@ -196,7 +196,7 @@ export var projectOBJs = [
     {
         "id": "ANT",
         "Name": "The Very Hungry Antepillar",
-        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(61, 45, 29, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(61, 45, 29, 1) 97%), url('/src/Images/Projects/ANT/ant-3.JPG') no-repeat",
+        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(61, 45, 29, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(61, 45, 29, 1) 97%), url('/public/Images/Projects/ANT/ant-3.JPG') no-repeat",
         "Developers": "https://lstandsforwinner.studio/",
         "StudioLogo": "LSW-Logo.png",
         "StudioBackground": "rgba(0, 0, 0, 1)",
@@ -214,7 +214,7 @@ export var projectOBJs = [
     {
         "id": "BSM",
         "Name": "Basement Game",
-        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(77, 82, 88, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(77, 82, 88, 1) 97%), url('/src/Images/Projects/BSM/bsm-5.JPG') no-repeat",
+        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(77, 82, 88, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(77, 82, 88, 1) 97%), url('/public/Images/Projects/BSM/bsm-5.JPG') no-repeat",
         "Developers": "https://lstandsforwinner.studio/",
         "StudioLogo": "LSW-Logo.png",
         "StudioBackground": "rgba(0, 0, 0, 1)",
@@ -232,7 +232,7 @@ export var projectOBJs = [
     {
         "id": "PLN",
         "Name": "Thread the Ring",
-        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(255, 255, 255, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(255, 255, 255, 1) 97%), url('/src/Images/Projects/PLN/ttrtitle.webp') no-repeat",
+        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(255, 255, 255, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(255, 255, 255, 1) 97%), url('/public/Images/Projects/PLN/ttrtitle.webp') no-repeat",
         "Developers": "Developed-by-Myself-(Solo-Project!)",
         "StudioLogo": "LSW-Logo.png",
         "StudioBackground": "rgba(0, 0, 0, 1)",
