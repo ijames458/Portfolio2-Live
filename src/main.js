@@ -447,12 +447,17 @@ function OpenProject() {
       projGallery.style.color = projectOBJs[i].TextCol;
 
       for (k = 0; k < projectLinkButtons.length; k++) {
-        if (projectLinkButtons[k].id == "studio") {
-          projectLinkButtons[k].setAttribute("href", projectOBJs[i].Developers);
-          projectLinkButtons[k].style.backgroundImage = "url(./Images/SiteNav/" + projectOBJs[i].StudioLogo;
-          projectLinkButtons[k].style.backgroundColor = projectOBJs[i].StudioBackground;
+        if (projectOBJs[i].id != "PLN") {
+          projectLinkButtons[k].style.visibility = "visible";
+          if (projectLinkButtons[k].id == "studio") {
+            projectLinkButtons[k].setAttribute("href", projectOBJs[i].Developers);
+            projectLinkButtons[k].style.backgroundImage = "url(./Images/SiteNav/" + projectOBJs[i].StudioLogo;
+            projectLinkButtons[k].style.backgroundColor = projectOBJs[i].StudioBackground;
+          } else {
+            projectLinkButtons[k].setAttribute("href", projectOBJs[i].Link);
+          }
         } else {
-          projectLinkButtons[k].setAttribute("href", projectOBJs[i].Link);
+          projectLinkButtons[k].style.visibility = "hidden"; //Temporary solution while I think of what to do with the plane project
         }
       }
 
