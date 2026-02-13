@@ -448,7 +448,7 @@ function OpenProject() {
 
       for (k = 0; k < projectLinkButtons.length; k++) {
         if (projectOBJs[i].id != "PLN") {
-          projectLinkButtons[k].style.visibility = "visible";
+          projectLinkButtons[k].style.visibility = "inherit";
           if (projectLinkButtons[k].id == "studio") {
             projectLinkButtons[k].setAttribute("href", projectOBJs[i].Developers);
             projectLinkButtons[k].style.backgroundImage = "url(./Images/SiteNav/" + projectOBJs[i].StudioLogo;
