@@ -71,7 +71,6 @@ var animDuration = 2000;
 
 //Load Model into scene
 const loader = new GLTFLoader().setPath('./DeskModel/')
-console.log('loader initialised');
 loader.load('portfolio2.gltf', (gltf) => { //Callback function (active when other one finishes)
   const mesh = gltf.scene;
   mesh.position.set(0, 4.2, 0);
@@ -81,6 +80,8 @@ loader.load('portfolio2.gltf', (gltf) => { //Callback function (active when othe
     child.receiveShadow = true;
   })
   scene.add(mesh);
+  console.log('model initialised');
+  UpdateLoadingScreen();
 });
 
 //Create ground plane as a point of reference
@@ -301,6 +302,32 @@ const animationsGroup = new Group();
 
 
 //#region Website Functionality
+//Loading screen management
+var loadingScreen = document.getElementById("loadingScreen");
+window.addEventListener('load', (event) => {
+  console.log("Page Loaded");
+})
+
+function UpdateLoadingScreen() {
+  // loadingScreen.style.display = 'none';
+  fadeOut(loadingScreen);
+}
+
+function fadeOut(element) {
+  var opacity = 1;
+  console.log(opacity);
+  var timer = setInterval(function () {
+    if (opacity <= 0.01) {
+      clearInterval(timer);
+      element.style.display = 'none';
+    }
+    element.style.opacity = opacity;
+    // element.style.filter = 'alpha(opacity=' + opacity * 100 + ")";
+    opacity -= opacity * 0.1;
+  }, 20);
+}
+
+
 //Array of each window wrapper to be resized when resizing the actual website (hopefully everything else just falls into place)
 export var contentWindows = document.getElementsByClassName("contentWrapper");
 
