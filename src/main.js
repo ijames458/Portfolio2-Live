@@ -427,6 +427,7 @@ function OpenProject() {
   var projRelease = document.getElementById("release");
   var projDetails = document.getElementById("projDetails");
   var projAbout = document.getElementById("descText");
+  var projAcc = document.getElementById("accText");
   var projRole = document.getElementById("roleText");
   var projGallery = document.getElementById("projGallery");
 
@@ -462,6 +463,7 @@ function OpenProject() {
       }
 
       projAbout.innerText = projectOBJs[i].About;
+      projAcc.innerText = projectOBJs[i].Accolades;
       projRole.innerText = projectOBJs[i].RoleAct;
 
       var galleryElements = document.getElementsByClassName("monGalleryElement");

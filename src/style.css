@@ -951,6 +951,10 @@ canvas {
   visibility: hidden;
 }
 
+#seInfo {
+  overflow: auto;
+}
+
 .seCol {
   height: 100%;
   margin: 0;
@@ -967,6 +971,8 @@ canvas {
   width: 30%;
   border-left: solid 1px;
   border-right: solid 1px;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 #sExp {
@@ -999,15 +1005,12 @@ canvas {
 }
 
 .colMain {
-  height: 20%;
-
-  font-size: 13px;
+  height: 30%;
   background-color: rgba(255, 255, 255, 1);
 }
 
 .colAltMain {
-  height: 20%;
-  font-size: 13px;
+  height: 30%;
   background-color: rgba(233, 233, 233, 1);
 }
 
@@ -1375,10 +1378,6 @@ canvas {
 
   .sPText p {
     font-size: clamp(0.625rem, 4vh - 0.1rem, 0.938rem);
-  }
-
-  #seInfo {
-    overflow: auto;
   }
 
   .colHead {
