@@ -393,6 +393,10 @@ for (var i = 0; i < aboutButtons.length; i++) {
   aboutButtons[i].addEventListener('click', OpenAbout);
 }
 
+//Button to open CV
+var cVButton = document.getElementById("cVBar");
+cVButton.addEventListener('click', OpenCV);
+
 //Buttons that scroll the facts gallery
 var fFbuttons = document.getElementsByClassName("fFButton");
 for (var i = 0; i < fFbuttons.length; i++) {
@@ -556,6 +560,10 @@ function OpenAbout() {
       curWindow.style.zIndex = 10;
     }
   }
+}
+
+function OpenCV() {
+  window.open("./CV2S.pdf", "_blank").focus();
 }
 
 function CloseAbout() {
@@ -756,14 +764,11 @@ function OnKeyDown(event) {
 
 window.addEventListener("resize", onWindowResize, false);
 
-var defaultWidth = 1920;
-var defaultHeight = 1047;
+var defaultDimensions = new THREE.Vector3(1920, 1047);
+var startingDimensions = new THREE.Vector3(window.innerWidth, window.innerHeight);
 
-var startingWidth = window.innerWidth;
-var startingHeight = window.innerHeight;
-
-var stWidthChange = defaultWidth - startingWidth;
-var stHeightChange = defaultHeight - startingHeight;
+var stWidthChange = defaultDimensions.x - startingDimensions.x;
+var stHeightChange = defaultDimensions.y - startingDimensions.y;
 
 for (i = 0; i < contentWindows.length; i++) {
   var curWindowWidth = contentWindows[i].clientWidth;
@@ -779,20 +784,20 @@ for (i = 0; i < contentWindows.length; i++) {
 }
 
 
-var prevWidth = startingWidth;
-var prevHeight = startingHeight;
+var prevWidth = startingDimensions.x;
+var prevHeight = startingDimensions.y;
 
 function onWindowResize() {
-  var widthChange = prevWidth - window.innerWidth;
-  var heightChange = prevHeight - window.innerHeight;
+  var dimensionChange = new THREE.Vector3(prevWidth - window.innerWidth, prevHeight - window.innerHeight);
+  console.log(window.innerHeight);
 
   for (i = 0; i < contentWindows.length; i++) {
     var curWindowWidth = contentWindows[i].clientWidth;
     var curWindowPos = contentWindows[i].getBoundingClientRect().left;
 
-    curWindowPos -= windowRatios[i].WbPRatio * widthChange;
-    curWindowPos += windowRatios[i].HbPRatio * heightChange;
-    curWindowWidth -= windowRatios[i].HbWRatio * heightChange;
+    curWindowPos -= windowRatios[i].WbPRatio * dimensionChange.x;
+    curWindowPos += windowRatios[i].HbPRatio * dimensionChange.y;
+    curWindowWidth -= windowRatios[i].HbWRatio * dimensionChange.y;
 
     contentWindows[i].style.width = curWindowWidth + "px";
     contentWindows[i].style.left = curWindowPos + "px";

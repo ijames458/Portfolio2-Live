@@ -12,7 +12,6 @@ export function ToTarget(targetPosition, targetRotation, camera, animGroup, dura
     for (var i = 0; i < activeButtons.length; i++) {
         activeButtons[i].layers.set(10);
         activeButtons[i].children[0].layers.set(10);
-        console.log(activeButtons[i]);
     }
     backButton.style.visibility = "hidden";
 

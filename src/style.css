@@ -1181,6 +1181,22 @@ canvas {
   background-size: contain;
 }
 
+.abBarElementCV {
+  width: 5%;
+  height: 80%;
+
+  display: flex;
+  justify-content: center;
+
+  border-radius: 10px;
+  cursor: pointer;
+
+  background-color: rgba(255, 255, 255, 1);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .abName {
   position: absolute;
   height: 20px;
@@ -1195,6 +1211,10 @@ canvas {
 }
 
 .abBarElement:hover .abName {
+  display: block;
+}
+
+.abBarElementCV:hover .abName {
   display: block;
 }
 
@@ -1345,6 +1365,10 @@ canvas {
   .abBarElement {
     border-radius: 7px;
   }
+
+  .abBarElementCV {
+    border-radius: 7px;
+  }
 }
 
 
@@ -1418,6 +1442,11 @@ canvas {
   }
 
   .abBarElement {
+    border-radius: 5px;
+    width: 15%;
+  }
+
+  .abBarElementCV {
     border-radius: 5px;
     width: 15%;
   }

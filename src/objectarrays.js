@@ -126,8 +126,8 @@ export var windowRatios = [
     },
     {
         "Name": "About",
-        "HbWRatio": 0.98591549295, //For every 1px of window height change, this value is applied to the button width (Calculated by dividing the change between button width values from one window height value to another)
-        "HbPRatio": 0.52582159624, //For every 1px of window height change, this value is applied to the button left position (Calculated by dividing the change between button left position values from one window height value to another)
+        "HbWRatio": 1.01020408163, //For every 1px of window height change, this value is applied to the button width (Calculated by dividing the change between button width values from one window height value to another)
+        "HbPRatio": 0.52342704149, //For every 1px of window height change, this value is applied to the button left position (Calculated by dividing the change between button left position values from one window height value to another)
         "WbPRatio": 0.5, //For every 1px of window width change, this value is applied to the button left position (Calculated by dividing the change between button left position values from one window width value to another)
     },
     {
@@ -401,14 +401,14 @@ export var contactLinkOBJs = [
         "Name": "GT",
         "Open": function () {
             console.log("Opening Github");
-            window.open("https://github.com/IsaacJ46591168", '_blank').focus();
+            window.open("https://github.com/ijames458", '_blank').focus();
         }
     },
     {
         "Name": "EM",
         "Open": function () {
             console.log("Opening Email");
-            window.open("mailto:isaacjames4580@gmail.com?Subject=Hello%20User").focus();
+            window.open("mailto:isaacjames4580@gmail.com?Subject=Hello%20Isaac").focus();
         }
     },
     {
