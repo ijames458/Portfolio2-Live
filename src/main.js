@@ -7,6 +7,7 @@ import * as THREE from 'three'
 import { Tween, Group } from '@tweenjs/tween.js'
 import { ToTarget, currentlyAnim, TextGrow } from './tweenanimations';
 import { projectOBJs, smallProjectOBJs, projectLinkOBJs, propertySelectors, aboutWindowsOBJs, funFacts, contactLinkOBJs, windowRatios, navButtonOBJs } from './objectarrays';
+import { element } from 'three/tsl';
 
 //#region ThreeJS Setup
 const scene = new THREE.Scene();
@@ -495,6 +496,7 @@ function OpenSmallProjectFinder() {
   modalContentWindow.style.zIndex = 9;
 }
 
+var galleryElements = document.getElementsByClassName("sGalleryElement");
 var sGalleryVideo = document.getElementById("sGalleryVideo");
 function OpenSmallProject() {
   smallProjDisplay.style.visibility = "visible";
@@ -507,6 +509,19 @@ function OpenSmallProject() {
   var sProjType = document.getElementById("sProjType");
   var sProjDesc = document.getElementById("sProjDesc");
 
+  var tempArray = [];
+
+  for (i = 0; i < galleryElements.length; i++) {
+    tempArray[i] = galleryElements[i]
+  }
+
+  tempArray.forEach(element => {
+    element.style.backgroundImage = ""
+    element.style.visibility = "hidden"
+  });
+
+  console.log(tempArray);
+
   sGalleryVideo.setAttribute("src", "");
 
   for (i = 0; i < smallProjectButtons.length; i++) {
@@ -515,10 +530,9 @@ function OpenSmallProject() {
       sProjType.innerText = smallProjectOBJs[i].Type;
       sProjFinish.innerText = smallProjectOBJs[i].Finish;
       sProjDesc.innerText = smallProjectOBJs[i].Desc;
-
-      var galleryElements = document.getElementsByClassName("sGalleryElement");
       for (var k = 0; k < smallProjectOBJs[i].Gallery.length; k++) {
         var string = smallProjectOBJs[i].Gallery[k];
+        galleryElements[k].style.visibility = "inherit"
         if (string.substring(string.length - 4) == "webm" && smallProjectOBJs[i].id == this.id) {
           galleryElements[k].style.backgroundImage = "";
           sGalleryVideo.setAttribute("src", "./Videos/" + smallProjectOBJs[i].Gallery[k]);

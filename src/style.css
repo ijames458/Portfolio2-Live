@@ -230,6 +230,7 @@ canvas {
 }
 
 .modal {
+  cursor: pointer;
   background-position: center;
   background-size: cover;
 }
@@ -531,15 +532,23 @@ canvas {
   width: 85%;
   height: 95%;
 
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.smallProjCategory {
+  width: 100%;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
+
+  margin-top: 1em;
 }
 
-#listTitle {
+#categoryTitle {
   width: 100%;
   height: 5%;
 
@@ -547,20 +556,20 @@ canvas {
   align-items: center;
 }
 
-#listTitle p {
+#categoryTitle p {
   color: blue;
-  font-size: 18px;
+  font-size: 15px;
   margin-left: 10px;
 }
 
-#listTitle hr {
+#categoryTitle hr {
   flex-grow: 1;
   color: rgba(219, 219, 219, 1);
 }
 
 .smallProjectContainer {
-  width: 30%;
-  height: 20%;
+  width: 240px;
+  height: 80px;
 
   display: flex;
   justify-content: flex-start;
@@ -597,12 +606,14 @@ canvas {
 }
 
 .sPText h2 {
-  font-size: clamp(0.625rem, 2vh - 0.4rem, 1rem);
+  /* font-size: clamp(0.625rem, 2vh - 0.4rem, 1rem); */
+  font-size: 0.8rem;
   margin-bottom: 0;
 }
 
 .sPText p {
-  font-size: clamp(0.625rem, 2vh - 0.4rem, 0.75rem);
+  /* font-size: clamp(0.625rem, 2vh - 0.4rem, 0.75rem); */
+  font-size: 0.7rem;
   margin-top: 5px;
 }
 
@@ -734,7 +745,6 @@ canvas {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  cursor: pointer;
 }
 
 #projectBar {
@@ -1319,7 +1329,6 @@ canvas {
 
   #smallProjectsList {
     margin-top: 0;
-    overflow: auto;
   }
 
   #path {
@@ -1335,8 +1344,12 @@ canvas {
   }
 
   .smallProjectContainer {
-    width: 40%;
-    height: 30%;
+    /* width: 40%;
+    height: 30%; */
+
+    width: 200px;
+    height: 70px;
+
   }
 
   #sPropertiesContent {
@@ -1350,13 +1363,13 @@ canvas {
     height: 50%;
   }
 
-  .sPText h2 {
+  /* .sPText h2 {
     font-size: clamp(0.625rem, 2vh - 0.1rem, 1rem);
   }
 
   .sPText p {
     font-size: clamp(0.625rem, 2vh - 0.1rem, 0.75rem);
-  }
+  } */
 
   .appTopBar {
     height: 12%;
@@ -1394,22 +1407,21 @@ canvas {
     width: 20%;
   }
 
-
   #smallProjectsList {
     width: 80%;
   }
 
   .smallProjectContainer {
     width: 75%;
-    height: 50%;
+    height: 80px
   }
 
   .sPText h2 {
-    font-size: clamp(0.688rem, 4vh - 0.1rem, 1rem);
+    font-size: clamp(0.688rem, 4vh - 0.2rem, 1rem);
   }
 
   .sPText p {
-    font-size: clamp(0.625rem, 4vh - 0.1rem, 0.938rem);
+    font-size: clamp(0.625rem, 4vh - 0.4rem, 0.938rem);
   }
 
   .colHead {

@@ -292,7 +292,7 @@ export var smallProjectOBJs = [
         "Desc": "One of my very first modelling projects were these snow-covered mountains. Unfortunately, with it being done a long time ago, I don't remember much of the actual modelling process, but I do know that it was pretty much the absolute limit of what my laptop could handle.",
         "ImagesLocation": "SmallProjects/Mount/",
         "Gallery": [
-            "mountains.webp", "mountains2.webp", "mountains3.webp", "mountains4.webp", "mountains5.webp", "mountains6.webp", "mountains7.webp"
+            "mountains.webp", "mountains2.webp", "mountains3.webp", "mountains4.webp", "mountains5.webp", "mountains6.webp"
         ]
     },
     {
@@ -303,7 +303,7 @@ export var smallProjectOBJs = [
         "Desc": "My first try with randomly-generating terrain combined with an interest in the vaporwave aesthetic resulted in this scene. I turned this into an animation using by turning the generated mesh into an array and then just moving the camera though everything, and then resetting the camera back to its original point when it got to the end of the array so it looked infinite.",
         "ImagesLocation": "SmallProjects/VPW/",
         "Gallery": [
-            "vaporwave.webm", "vaporwave2.webp", "vaporwave3.webp", "vaporwave4.webp", "vaporwave5.webp", "vaporwave6.webp", "vaporwave7.webp"
+            "vaporwave.webm", "vaporwave2.webp", "vaporwave3.webp", "vaporwave4.webp", "vaporwave5.webp", "vaporwave6.webp"
         ]
     },
     {
@@ -314,7 +314,7 @@ export var smallProjectOBJs = [
         "Desc": "My role for L Stands for Winner was focused more on 3D art at the time of making this, and so I thought I'd model stuff in my room as practice for all the game jams we were doing. This was one such example!",
         "ImagesLocation": "SmallProjects/WiiU/",
         "Gallery": [
-            "wiiu.webp", "wiiu2.webp", "wiiu3.webp", "wiiu4.webp", "wiiu5.webp", "wiiu6.webp", "wiiu7.webp"
+            "wiiu.webp", "wiiu2.webp", "wiiu3.webp", "wiiu4.webp", "wiiu5.webp", "wiiu6.webp"
         ]
     },
     {
@@ -325,7 +325,7 @@ export var smallProjectOBJs = [
         "Desc": "While mostly following a tutorial, I made this as practice for ongoing game jam projects with L Stands for Winner. This small project involved a lot of experimentation with modifiers, such as array, mirror, skin, etc.",
         "ImagesLocation": "SmallProjects/Train/",
         "Gallery": [
-            "trainstation.webp", "trainstation2.webp", "trainstation3.webp", "trainstation4.webp", "trainstation5.webp", "trainstation6.webp", "trainstation7.webp"
+            "trainstation.webp", "trainstation2.webp", "trainstation3.webp", "trainstation4.webp", "trainstation5.webp", "trainstation6.webp"
         ]
     },
     {
@@ -336,7 +336,7 @@ export var smallProjectOBJs = [
         "Desc": "My first attempt at combining 3D animation with simulation in another instance of practice for game jams. I'm not sure what exactly made my mind settle on creating this exact animation, and it was my first time really trying to get to grips with Blender's animation tab, which included everything from the dope sheet to the action tab to the graph editor.",
         "ImagesLocation": "SmallProjects/Cube/",
         "Gallery": [
-            "cube.webm", "cubepic1.webp", "cubepic2.webp", "cubepic3.webp", "cubepic4.webp", "cubepic5.webp", "cubepic6.webp"
+            "cube.webm", "cubepic1.webp", "cubepic2.webp", "cubepic3.webp", "cubepic4.webp", "cubepic5.webp"
         ]
     },
     {
@@ -347,7 +347,29 @@ export var smallProjectOBJs = [
         "Desc": "Using geometry nodes is very complicated, but very interesting. Funnily enough, this project was only supposed to be the board itself, but after finishing it, I thought it would be nice to give it its own scene to make the whole render look better. While I couldn't completely replicate it, the scene is based on a real station that exists somewhere!",
         "ImagesLocation": "SmallProjects/Board/",
         "Gallery": [
-            "board.webm", "board1.webp", "board2.webp", "board3.webp", "board4.webp", "board5.webp", "board6.webp"
+            "board.webm", "board1.webp", "board2.webp", "board3.webp", "board4.webp", "board5.webp"
+        ]
+    },
+    {
+        "id": "AIM",
+        "Name": "Project Name: Aim Trainer",
+        "Type": "Type of project: Python App",
+        "Finish": "Finished: March 2026",
+        "Desc": "A basic Python aim trainer, using Pygame! Pygame's drawing systems meant taking unique approaches to getting everything on-screen to update properly, essentially erasing everything on-screen every frame and then drawing it again if it were to be updated. Complete with a streak score and health system!",
+        "ImagesLocation": "SmallProjects/Aim/",
+        "Gallery": [
+            "aim.webm"
+        ]
+    },
+    {
+        "id": "CAR",
+        "Name": "Project Name: Car Controller",
+        "Type": "Type of project: C# Unity Project",
+        "Finish": "Finished: Ongoing!",
+        "Desc": "A somewhat arcade-y car controller built using C#. This is an entirely physics approach, with the controller making heavy use of raycasters to calculate the forces required for suspension, grip, acceleration and braking. A very challenging project, but personally very rewarding when it works properly!",
+        "ImagesLocation": "SmallProjects/Car/",
+        "Gallery": [
+            "car.webm"
         ]
     },
 ]

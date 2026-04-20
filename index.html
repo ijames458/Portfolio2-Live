@@ -118,63 +118,92 @@
             <p class="monText">Portfolio2</p>
           </li>
         </ul>
-        <ul class="finderElement" id="smallProjectsList">
-          <div id="listTitle">
+        <div class="finderElement" id="smallProjectsList">
+          <!-- <div id="listTitle">
             <p class="monText">Recent Projects (6)</p>
             <hr>
-          </div>
-          <li class="smallProjectContainer" id="MTV">
-            <div class="smallProjectIcon"
-              style="background-image: url(/public/Images/SmallProjects/Mount/mountains.webp)">
+          </div> -->
+          <ul class="smallProjCategory" id="Code">
+            <div id="categoryTitle">
+              <p class="monText">Programming</p>
+              <hr>
             </div>
-            <div class="sPText">
-              <h2 class="monText">Mountain Valley</h2>
-              <p class="monText">This PC\Small Projects</p>
+            <li class="smallProjectContainer" id="AIM">
+              <div class="smallProjectIcon" style="background-image: url(/public/Images/ProjectThumb/aim.webp)">
+              </div>
+              <div class="sPText">
+                <h2 class="monText">Aim Trainer</h2>
+                <p class="monText">This PC\Small Projects</p>
+              </div>
+            </li>
+            <li class="smallProjectContainer" id="CAR">
+              <div class="smallProjectIcon" style="background-image: url(/public/Images/ProjectThumb/carthumb.webp)">
+              </div>
+              <div class="sPText">
+                <h2 class="monText">Car Controller</h2>
+                <p class="monText">This PC\Small Projects</p>
+              </div>
+            </li>
+          </ul>
+          <ul class="smallProjCategory" id="3D">
+            <div id="categoryTitle">
+              <p class="monText">3D</p>
+              <hr>
             </div>
-          </li>
-          <li class="smallProjectContainer" id="VPW">
-            <div class="smallProjectIcon"
-              style="background-image: url(/public/Images/SmallProjects/VPW/vaporwave.webp)">
-            </div>
-            <div class="sPText">
-              <h2 class="monText">VaporWave</h2>
-              <p class="monText">This PC\Small Projects</p>
-            </div>
-          </li>
-          <li class="smallProjectContainer" id="WII">
-            <div class="smallProjectIcon" style="background-image: url(/public/Images/SmallProjects/WiiU/wiiu.webp)">
-            </div>
-            <div class="sPText">
-              <h2 class="monText">Wii U</h2>
-              <p class="monText">This PC\Small Projects</p>
-            </div>
-          </li>
-          <li class="smallProjectContainer" id="TRN">
-            <div class="smallProjectIcon"
-              style="background-image: url(/public/Images/SmallProjects/Train/trainstation.webp)"></div>
-            <div class="sPText">
-              <h2 class="monText">Train Station</h2>
-              <p class="monText">This PC\Small Projects</p>
-            </div>
-          </li>
-          <li class="smallProjectContainer" id="MVC">
-            <div class="smallProjectIcon" style="background-image: url(/public/Images/ProjectThumb/cubethumbnail.webp)">
-            </div>
-            <div class="sPText">
-              <h2 class="monText">Moving Cube</h2>
-              <p class="monText">This PC\Small Projects</p>
-            </div>
-          </li>
-          <li class="smallProjectContainer" id="DPB">
-            <div class="smallProjectIcon"
-              style="background-image: url(/public/Images/ProjectThumb/boardthumbnail.webp)">
-            </div>
-            <div class="sPText">
-              <h2 class="monText">Departure Board</h2>
-              <p class="monText">This PC\Small Projects</p>
-            </div>
-          </li>
-        </ul>
+            <li class="smallProjectContainer" id="MTV">
+              <div class="smallProjectIcon"
+                style="background-image: url(/public/Images/SmallProjects/Mount/mountains.webp)">
+              </div>
+              <div class="sPText">
+                <h2 class="monText">Mountain Valley</h2>
+                <p class="monText">This PC\Small Projects</p>
+              </div>
+            </li>
+            <li class="smallProjectContainer" id="VPW">
+              <div class="smallProjectIcon"
+                style="background-image: url(/public/Images/SmallProjects/VPW/vaporwave.webp)">
+              </div>
+              <div class="sPText">
+                <h2 class="monText">VaporWave</h2>
+                <p class="monText">This PC\Small Projects</p>
+              </div>
+            </li>
+            <li class="smallProjectContainer" id="WII">
+              <div class="smallProjectIcon" style="background-image: url(/public/Images/SmallProjects/WiiU/wiiu.webp)">
+              </div>
+              <div class="sPText">
+                <h2 class="monText">Wii U</h2>
+                <p class="monText">This PC\Small Projects</p>
+              </div>
+            </li>
+            <li class="smallProjectContainer" id="TRN">
+              <div class="smallProjectIcon"
+                style="background-image: url(/public/Images/SmallProjects/Train/trainstation.webp)"></div>
+              <div class="sPText">
+                <h2 class="monText">Train Station</h2>
+                <p class="monText">This PC\Small Projects</p>
+              </div>
+            </li>
+            <li class="smallProjectContainer" id="MVC">
+              <div class="smallProjectIcon"
+                style="background-image: url(/public/Images/ProjectThumb/cubethumbnail.webp)">
+              </div>
+              <div class="sPText">
+                <h2 class="monText">Moving Cube</h2>
+                <p class="monText">This PC\Small Projects</p>
+              </div>
+            </li>
+            <li class="smallProjectContainer" id="DPB">
+              <div class="smallProjectIcon"
+                style="background-image: url(/public/Images/ProjectThumb/boardthumbnail.webp)">
+              </div>
+              <div class="sPText">
+                <h2 class="monText">Departure Board</h2>
+                <p class="monText">This PC\Small Projects</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="monWindows" id="smallProjectProperties">
@@ -219,7 +248,6 @@
               <li class="sGalleryElement modal" id="sGallery4"></li>
               <li class="sGalleryElement modal" id="sGallery5"></li>
               <li class="sGalleryElement modal" id="sGallery6"></li>
-              <li class="sGalleryElement modal" id="sGallery7"></li>
               </li>
             </ul>
           </ul>
@@ -230,7 +258,7 @@
         <div class="pBElementIcon" style="background-image: url(/public/Images/SiteNav/home.svg)"></div>
       </li>
       <li class="pBElementContainer" id="searchMock">
-        <p class="monText">Last Updated: 20/03/2026</p>
+        <p class="monText">Last Updated: 19/04/2026</p>
       </li>
       <li class="pBElementContainer project" id="P1">
         <div class="pBElementIcon" style="background-image: url(/public/Images/ProjectThumb/p1logo.webp)"></div>
