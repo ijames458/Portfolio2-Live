@@ -416,6 +416,7 @@ for (var i = 0; i < phoneButtons.length; i++) {
   phoneButtons[i].addEventListener('click', OpenLink);
 }
 
+var windowName = document.getElementById("projWindowName");
 var projDisplay = document.getElementById("projectDisplay");
 var smallProjFinder = document.getElementById("smallProjectFinder");
 var smallProjDisplay = document.getElementById("smallProjectProperties");
@@ -438,6 +439,8 @@ function OpenProject() {
 
   for (i = 0; i < projectBarButtons.length; i++) {
     if (this.id == projectOBJs[i].id) {
+      windowName.innerText = projectOBJs[i].id + ".txt";
+
       projName.innerText = projectOBJs[i].Name;
       projRelease.innerText = projectOBJs[i].Release;
 
@@ -453,7 +456,7 @@ function OpenProject() {
       projGallery.style.color = projectOBJs[i].TextCol;
 
       for (k = 0; k < projectLinkButtons.length; k++) {
-        if (projectOBJs[i].id != "PLN") {
+        if (projectOBJs[i].id != "PLN" && projectOBJs[i].id != "BSC") {
           projectLinkButtons[k].style.visibility = "inherit";
           if (projectLinkButtons[k].id == "studio") {
             projectLinkButtons[k].setAttribute("href", projectOBJs[i].Developers);
@@ -463,7 +466,7 @@ function OpenProject() {
             projectLinkButtons[k].setAttribute("href", projectOBJs[i].Link);
           }
         } else {
-          projectLinkButtons[k].style.visibility = "hidden"; //Temporary solution while I think of what to do with the plane project
+          projectLinkButtons[k].style.visibility = "hidden"; //Temporary solution while I think of what to do with projects that you can't access
         }
       }
 

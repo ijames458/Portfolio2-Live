@@ -261,7 +261,7 @@ canvas {
   font-size: clamp(0.438rem, 3vh - 0.2rem, 1rem);
 }
 
-.windowName {
+.monWindowName {
   flex-grow: 1;
   padding-left: 10px;
 }
@@ -284,6 +284,10 @@ canvas {
 
 #projectWindowTopBar {
   background-color: rgba(70, 70, 70, 1);
+}
+
+#projectWindowTopBar p {
+  color: rgba(255, 255, 255, 1);
 }
 
 #projectClose p {
@@ -621,6 +625,11 @@ canvas {
   background-color: rgba(230, 230, 230, 1);
 }
 
+#sPPWindowTopBar p {
+  color: rgba(0, 0, 0, 1);
+}
+
+
 #smallProjPropClose {
   color: rgba(0, 0, 0, 1);
 }
@@ -833,6 +842,12 @@ canvas {
 
   width: 100%;
   height: 100%;
+}
+
+.lapWindowName {
+  flex-grow: 1;
+  padding-left: 10px;
+  color: rgba(0, 0, 0, 1);
 }
 
 .abWindow {
@@ -1282,16 +1297,18 @@ canvas {
   width: 35%;
   height: 35%;
 
-  border: solid 1px;
-  border-radius: 10px;
+  border-radius: 20px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 80%;
   cursor: pointer;
-  background-color: rgba(190, 190, 190, 0.3);
+  /* transition: ease-in 0.15s; */
+  /* box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  background-color: rgba(140, 140, 140, 0.3);
 }
 
 .contactApp:hover {
+  /* transition: ease-in 0.15s; */
   background-color: rgba(0, 0, 0, 0.4);
 }
 

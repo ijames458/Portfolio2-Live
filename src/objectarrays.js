@@ -166,9 +166,9 @@ export var projectOBJs = [
         "StudioLogo": "macqlogo.webp",
         "StudioBackground": "rgba(255, 255, 255, 1)",
         "Release": "Released: November 2023",
-        "Link": "https://www.meta.com/en-gb/experiences/liminal-relax-unwind-engage-explore/3158342884265828/",
+        "Link": "Not-available-right-now.",
         "About": "A unique VR experience designed to assist a user in getting ready for sleep. Relax and doze off as you 'watch' the comforting lightshow of a beach-side campfire in front of you, listening to a carefully constructed sleep-inducing soundscape.",
-        "Accolades": "This project was chosen by Liminal VR to be put up for commercial use on their store.",
+        "Accolades": "This project was chosen by Liminal VR to be put up for commercial use on their store for a short time after development was finished.",
         "RoleAct": "My roles for this project were developer and audio engineer. This was definitely the most unique project I've ever been part of; a VR project about preparing the user for sleep, which they would use with their eyes closed. My most significant contributions were via the development of the audio playing system, taking in tracks provided from a list and regulating when and how many tracks were playing at once. On sound design, I was responsible for recording, mixing and implementing various audio tracks that combined together to create a non-intrusive, subtle audioscape that aimed to make the user feel relaxed enough to feel sleepy. This included sounds such as ocean noises without the crashing of waves, fire sounds without the peaking and crackling of the fire, subtle narration and chatting that allowed the user to feel comforted without feeling distracted by the sounds.",
         "BackgroundCol": "rgba(0, 0, 0, 1)",
         "TextCol": "rgba(255, 255, 255, 1)",
@@ -397,7 +397,7 @@ export var funFacts = [
     {
         "id": "fact1",
         "line1": "The longest I've ever stayed awake is 25 hours.",
-        "line2": "It was for a coding assignment at Uni..."
+        "line2": "It was for a programming assignment at Uni..."
     },
     {
         "id": "fact2",
