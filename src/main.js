@@ -398,6 +398,10 @@ for (var i = 0; i < aboutButtons.length; i++) {
 var cVButton = document.getElementById("cVBar");
 cVButton.addEventListener('click', OpenCV);
 
+//Button to open Devlog Channel
+var yTButton = document.getElementById("yTBar");
+yTButton.addEventListener('click', OpenYT);
+
 //Buttons that scroll the facts gallery
 var fFbuttons = document.getElementsByClassName("fFButton");
 for (var i = 0; i < fFbuttons.length; i++) {
@@ -581,6 +585,10 @@ function OpenAbout() {
 
 function OpenCV() {
   window.open("./CV2S.pdf", "_blank").focus();
+}
+
+function OpenYT() {
+  window.open("https://www.youtube.com/@space-games4815", "_blank").focus();
 }
 
 function CloseAbout() {
