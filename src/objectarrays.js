@@ -159,6 +159,44 @@ export var projectOBJs = [
         ]
     },
     {
+        "id": "FCH",
+        "Name": "Fetch!",
+        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(174, 202, 214, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(174, 202, 214, 1) 97%), url('./Images/Projects/FCH/fch-3.JPG') no-repeat",
+        "Developers": "https://www.youtube.com/@space-games4815",
+        "StudioLogo": "tempself.jpg",
+        "StudioBackground": "rgba(255, 255, 255, 1)",
+        "Release": "Finished: October 2026",
+        "Link": "https://ijames-458.itch.io/fetch",
+        "About": "A 2D Platformer game about catching a ball. Navigate the terrain and keep bouncing the ball up in the air until you can catch it at the end!",
+        "Accolades": "",
+        "RoleAct": "After I made a decision to improve my working habits and self-discipline, I decided to get to work on what is now my second solo game project! The aim of this project was to get something finished and published, rather than something complex and technically impressive, which is why this project is rather simple in terms of mechanics and design. However, it still contains plenty of features, including character movement, adjustable difficulty, multiple levels, and perhaps most importantly of all, a published, playable version! I also learnt a lot of new things with this project, perhaps most notably pixel art and animations, which ended up taking the most of project development time, but ended up looking very good for a first attempt, at least in my opinion. Despite its intended simplicity, there were still plenty of challenges that I managed to overcome, such as code architecture and save/loading systems.",
+        "BackgroundCol": "rgba(174, 202, 214, 1)",
+        "TextCol": "rgba(0, 0, 0, 1)",
+        "ImagesLocation": "Projects/FCH/",
+        "Gallery": [
+            "fch-1.JPG", "fch-2.JPG", "fch-3.JPG", "fch-4.JPG", "fch-5.JPG", "fch-6.JPG"
+        ]
+    },
+    {
+        "id": "PLN",
+        "Name": "Thread the Ring",
+        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(255, 255, 255, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(255, 255, 255, 1) 97%), url('./Images/Projects/PLN/ttrtitle.webp') no-repeat",
+        "Developers": "https://www.youtube.com/@space-games4815",
+        "StudioLogo": "tempself.jpg",
+        "StudioBackground": "rgba(255, 255, 255, 1)",
+        "Release": "Finished: 2020",
+        "Link": "",
+        "About": "A 3D Game putting your flight skills to the test! Twist, Turn and soar your way around around the stage, flying through all of the rings in order to make it to the finish line!",
+        "Accolades": "This project acheived a mark of 100/100 for the major-work section of the HSC Industrial Technology: Multimedia unit.",
+        "RoleAct": "This was my first solo project which I made for my final assignment for my industrial tech class in Year 12. It included the production of custom flight physics, a collision system for the plane and obstacles, a raycast-based scoring system for the rings, high-score systems, level progression functionality, custom UI and more. In terms of 3D Development, it included the production of the plane, islands, rings, obstacles, etc. Developing it solo was a huge learning curve, given that I was responsible for almost everything that went into it, and especially as I had never programmed anything before at the time, but I was more than up for the challenge. I tried to keep the flying mechanics to a more arcade-y level, as my inspiration was Pilotwings on the NES. The project was kept to a low-poly style, both in terms of personal preference and the limit of what my laptop could handle at the time.",
+        "BackgroundCol": "rgba(255, 255, 255, 1)",
+        "TextCol": "rgba(0, 0, 0, 1)",
+        "ImagesLocation": "Projects/PLN/",
+        "Gallery": [
+            "ttrtitle.webp", "ttrgame.webp", "fl1.webp", "fl2.webp", "fl4.webp", "fl5.webp"
+        ]
+    },
+    {
         "id": "BSC",
         "Name": "Beachside Campfire",
         "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 1) 97%), url('./Images/Projects/BSC/bsc-5.JPG') no-repeat",
@@ -166,7 +204,7 @@ export var projectOBJs = [
         "StudioLogo": "macqlogo.webp",
         "StudioBackground": "rgba(255, 255, 255, 1)",
         "Release": "Released: November 2023",
-        "Link": "Not-available-right-now.",
+        "Link": "", //Not-available-right-now
         "About": "A unique VR experience designed to assist a user in getting ready for sleep. Relax and doze off as you 'watch' the comforting lightshow of a beach-side campfire in front of you, listening to a carefully constructed sleep-inducing soundscape.",
         "Accolades": "This project was chosen by Liminal VR to be put up for commercial use on their store for a short time after development was finished.",
         "RoleAct": "My roles for this project were developer and audio engineer. This was definitely the most unique project I've ever been part of; a VR project about preparing the user for sleep, which they would use with their eyes closed. My most significant contributions were via the development of the audio playing system, taking in tracks provided from a list and regulating when and how many tracks were playing at once. On sound design, I was responsible for recording, mixing and implementing various audio tracks that combined together to create a non-intrusive, subtle audioscape that aimed to make the user feel relaxed enough to feel sleepy. This included sounds such as ocean noises without the crashing of waves, fire sounds without the peaking and crackling of the fire, subtle narration and chatting that allowed the user to feel comforted without feeling distracted by the sounds.",
@@ -175,25 +213,6 @@ export var projectOBJs = [
         "ImagesLocation": "Projects/BSC/",
         "Gallery": [
             "bsc-1.JPG", "bsc-2.JPG", "bsc-3.JPG", "bsc-4.JPG", "bsc-5.JPG", "bsc-6.JPG"
-        ]
-    },
-    {
-        "id": "SPC",
-        "Name": "Personal Space",
-        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(10, 6, 20, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(10, 6, 20, 1) 97%), url('./Images/Projects/SPC/spc-3.JPG') no-repeat",
-        "Developers": "https://lstandsforwinner.studio/",
-        "StudioLogo": "LSW-Logo.png",
-        "StudioBackground": "rgba(0, 0, 0, 1)",
-        "Release": "Released: 2023",
-        "Link": "https://lstandsforwinner.itch.io/personal-space",
-        "About": "A 3D Top-Down Game combining situational awareness and tight movement. Fly around in the depths of space while avoiding the spaceships trying to 're-enter' your atmosphere and avoid 're-entering' all the other planets while you're at it.",
-        "Accolades": "This project was produced for MQ Game Jams, a 48-Game Jam with the theme of Re-Entry. It won the people's choice award, and would then go on to be chosen to be displayed at Macquarie University's annual astrononmy night as part of their interactives exhibition.",
-        "RoleAct": "My role for this game-jam project was 3D artist. Since the models for this Game Jam were objects required to be avoided, and the project in general was very low-poly, not much detailling was given to them as the player wouldn't really be paying much more attention to them other than registering that they needed to be avoided, so the modelling and design was pretty basic. I did, however, take much inspiration from the Space Shuttle for the spaceship's design.",
-        "BackgroundCol": "rgba(10, 6, 20, 1)",
-        "TextCol": "rgba(255, 255, 255, 1)",
-        "ImagesLocation": "Projects/SPC/",
-        "Gallery": [
-            "spc-1.JPG", "spc-2.JPG", "spc-3.JPG", "spc-4.JPG", "spc-5.JPG", "spc-6.JPG"
         ]
     },
     {
@@ -216,6 +235,25 @@ export var projectOBJs = [
         ]
     },
     {
+        "id": "SPC",
+        "Name": "Personal Space",
+        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(10, 6, 20, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(10, 6, 20, 1) 97%), url('./Images/Projects/SPC/spc-3.JPG') no-repeat",
+        "Developers": "https://lstandsforwinner.studio/",
+        "StudioLogo": "LSW-Logo.png",
+        "StudioBackground": "rgba(0, 0, 0, 1)",
+        "Release": "Released: 2023",
+        "Link": "https://lstandsforwinner.itch.io/personal-space",
+        "About": "A 3D Top-Down Game combining situational awareness and tight movement. Fly around in the depths of space while avoiding the spaceships trying to 're-enter' your atmosphere and avoid 're-entering' all the other planets while you're at it.",
+        "Accolades": "This project was produced for MQ Game Jams, a 48-Game Jam with the theme of Re-Entry. It won the people's choice award, and would then go on to be chosen to be displayed at Macquarie University's annual astrononmy night as part of their interactives exhibition.",
+        "RoleAct": "My role for this game-jam project was 3D artist. Since the models for this Game Jam were objects required to be avoided, and the project in general was very low-poly, not much detailling was given to them as the player wouldn't really be paying much more attention to them other than registering that they needed to be avoided, so the modelling and design was pretty basic. I did, however, take much inspiration from the Space Shuttle for the spaceship's design.",
+        "BackgroundCol": "rgba(10, 6, 20, 1)",
+        "TextCol": "rgba(255, 255, 255, 1)",
+        "ImagesLocation": "Projects/SPC/",
+        "Gallery": [
+            "spc-1.JPG", "spc-2.JPG", "spc-3.JPG", "spc-4.JPG", "spc-5.JPG", "spc-6.JPG"
+        ]
+    },
+    {
         "id": "BSM",
         "Name": "Basement Game",
         "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(77, 82, 88, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(77, 82, 88, 1) 97%), url('./Images/Projects/BSM/bsm-5.JPG') no-repeat",
@@ -232,25 +270,6 @@ export var projectOBJs = [
         "ImagesLocation": "Projects/BSM/",
         "Gallery": [
             "bsm-1.JPG", "bsm-2.JPG", "bsm-3.JPG", "bsm-4.JPG", "bsm-5.JPG", "bsm-6.JPG"
-        ]
-    },
-    {
-        "id": "PLN",
-        "Name": "Thread the Ring",
-        "ProjectBackImg": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(255, 255, 255, 1) 97%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(255, 255, 255, 1) 97%), url('./Images/Projects/PLN/ttrtitle.webp') no-repeat",
-        "Developers": "Developed-by-Myself-(Solo-Project!)",
-        "StudioLogo": "",
-        "StudioBackground": "",
-        "Release": "Finished: 2020",
-        "Link": "Not-available-right-now.",
-        "About": "A 3D Game putting your flight skills to the test! Twist, Turn and soar your way around around the stage, flying through all of the rings in order to make it to the finish line!",
-        "Accolades": "This project acheived a mark of 100/100 for the major-work section of the HSC Industrial Technology: Multimedia unit.",
-        "RoleAct": "My first, and so far only, solo project which I made for my final assignment for my industrial tech class in Year 12. It included the production of custom flight physics, a collision system for the plane and obstacles, a raycast-based scoring system for the rings, high-score systems, level progression functionality, custom UI and more. In terms of 3D Development, it included the production of the plane, islands, rings, obstacles, etc. Developing it solo was a huge learning curve, given that I was responsible for almost everything that went into it, and especially as I had never programmed anything before at the time, but I was more than up for the challenge. I tried to keep the flying mechanics to a more arcade-y level, as my inspiration was Pilotwings on the NES. The project was kept to a low-poly style, both in terms of personal preference and the limit of what my laptop could handle at the time.",
-        "BackgroundCol": "rgba(255, 255, 255, 1)",
-        "TextCol": "rgba(0, 0, 0, 1)",
-        "ImagesLocation": "Projects/PLN/",
-        "Gallery": [
-            "ttrtitle.webp", "ttrgame.webp", "fl1.webp", "fl2.webp", "fl4.webp", "fl5.webp"
         ]
     }
 ]

@@ -459,21 +459,6 @@ function OpenProject() {
       projGallery.style.backgroundColor = projectOBJs[i].BackgroundCol;
       projGallery.style.color = projectOBJs[i].TextCol;
 
-      for (k = 0; k < projectLinkButtons.length; k++) {
-        if (projectOBJs[i].id != "PLN" && projectOBJs[i].id != "BSC") {
-          projectLinkButtons[k].style.visibility = "inherit";
-          if (projectLinkButtons[k].id == "studio") {
-            projectLinkButtons[k].setAttribute("href", projectOBJs[i].Developers);
-            projectLinkButtons[k].style.backgroundImage = "url(./Images/SiteNav/" + projectOBJs[i].StudioLogo;
-            projectLinkButtons[k].style.backgroundColor = projectOBJs[i].StudioBackground;
-          } else {
-            projectLinkButtons[k].setAttribute("href", projectOBJs[i].Link);
-          }
-        } else {
-          projectLinkButtons[k].style.visibility = "hidden"; //Temporary solution while I think of what to do with projects that you can't access
-        }
-      }
-
       projAbout.innerText = projectOBJs[i].About;
       projAcc.innerText = projectOBJs[i].Accolades;
       projRole.innerText = projectOBJs[i].RoleAct;
@@ -481,6 +466,27 @@ function OpenProject() {
       var galleryElements = document.getElementsByClassName("monGalleryElement");
       for (var k = 0; k < projectOBJs[i].Gallery.length; k++) {
         galleryElements[k].style.backgroundImage = "url(./Images/" + projectOBJs[i].ImagesLocation + projectOBJs[i].Gallery[k] + ")";
+      }
+
+      for (k = 0; k < projectLinkButtons.length; k++) {
+        if (projectLinkButtons[k].id == "studio") {
+          if (projectOBJs[i].Developers == "") {
+            projectLinkButtons[k].style.visibility = "hidden";
+          } else {
+            projectLinkButtons[k].style.visibility = "inherit";
+            projectLinkButtons[k].setAttribute("href", projectOBJs[i].Developers);
+            projectLinkButtons[k].style.backgroundImage = "url(./Images/SiteNav/" + projectOBJs[i].StudioLogo;
+            projectLinkButtons[k].style.backgroundColor = projectOBJs[i].StudioBackground;
+            console.log(projectOBJs[i].Developers);
+          }
+        } else {
+          if (projectOBJs[i].Link == "") {
+            projectLinkButtons[k].style.visibility = "hidden";
+          } else {
+            projectLinkButtons[k].style.visibility = "inherit";
+            projectLinkButtons[k].setAttribute("href", projectOBJs[i].Link);
+          }
+        }
       }
     }
   }

@@ -342,6 +342,7 @@ canvas {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  visibility: inherit;
 }
 
 .sPBItem:hover {
